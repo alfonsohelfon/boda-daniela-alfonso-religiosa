@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bakeries & Coffee | Daniela y Alfonso</title>
+    <style>
+        @font-face {
+            font-family: 'Bellissima Script';
+            src: url('Fonts/BellissimaScriptRedux-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-Italic.otf') format('opentype');
+            font-weight: normal;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-BookItalic.otf') format('opentype');
+            font-weight: 300;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-SemiBoldItalic.otf') format('opentype');
+            font-weight: 600;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-BoldItalic.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-ExtraBold.otf') format('opentype');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #fff8ea;
+            font-family: 'Practice', Georgia, serif;
+            color: #232618;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            background: transparent;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 1.2rem 2rem;
+            border-bottom: 1px solid #a79a6a;
+            position: relative;
+        }
+        .nav-title {
+            font-family: 'Bellissima Script', cursive;
+            font-size: 2.5rem;
+            color: #232618;
+            text-decoration: none;
+        }
+        .nav-back {
+            position: absolute;
+            left: 2rem;
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #232618;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .nav-back:hover { opacity: 0.6; }
+
+        .page-content {
+            padding: 8rem 2rem 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .section-script-title {
+            font-family: 'Bellissima Script', cursive;
+            font-size: 4rem;
+            color: #a79a6a;
+            margin-bottom: 3rem;
+        }
+        .coming-soon {
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .nav-title { font-size: 1.8rem; }
+            .nav-back { font-size: 0.85rem; }
+            .section-script-title { font-size: 2.8rem; }
+        }
+        @media (max-width: 600px) {
+            .section-script-title { font-size: 2.2rem; }
+            .nav-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html#todo-tostay" class="nav-back">&larr; Back</a>
+            <span class="nav-title">Bakeries & Coffee</span>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <h1 class="section-script-title">Bakeries & Coffee</h1>
+        <p class="coming-soon">Coming soon</p>
+    </div>
+
+</body>
+</html>
