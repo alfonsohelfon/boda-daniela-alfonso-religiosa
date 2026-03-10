@@ -90,29 +90,104 @@
         .nav-back:hover { opacity: 0.6; }
 
         .page-content {
-            padding: 8rem 2rem 4rem 2rem;
+            padding: 8rem 2rem 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
         }
         .section-script-title {
             font-family: 'Bellissima Script', cursive;
             font-size: 4rem;
             color: #a79a6a;
             margin-bottom: 3rem;
+            text-align: center;
         }
-        .coming-soon {
-            font-family: 'Practice', Georgia, serif;
-            font-style: italic;
-            font-size: 1.1rem;
-            color: #666;
-            margin-top: 2rem;
+
+        /* Breakfast block */
+        .breakfast-block {
+            max-width: 600px;
+            margin: 0 auto 4rem auto;
+            text-align: center;
+        }
+        .meal-label {
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 0.8rem;
+            color: #a79a6a;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ece0be;
+        }
+        .breakfast-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem 2rem;
+        }
+        .breakfast-list li {
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 0.82rem;
+            color: #232618;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.4rem 0;
+        }
+
+        /* Lunch & Dinner grid */
+        .lunch-label {
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 0.8rem;
+            color: #a79a6a;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ece0be;
+            text-align: center;
+        }
+        .restaurants-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .restaurants-column {
+            flex: 1;
+            min-width: 200px;
+            max-width: 320px;
+        }
+        .area-title {
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 0.85rem;
+            color: #a79a6a;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ece0be;
+        }
+        .restaurant-item {
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 0.82rem;
+            color: #232618;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.6rem 0;
+        }
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: #ece0be;
+            margin: 0;
         }
 
         @media (max-width: 900px) {
             .nav-title { font-size: 1.8rem; }
             .nav-back { font-size: 0.85rem; }
             .section-script-title { font-size: 2.8rem; }
+            .restaurants-grid { flex-direction: column; align-items: center; }
+            .restaurants-column { max-width: 100%; width: 100%; }
         }
         @media (max-width: 600px) {
             .section-script-title { font-size: 2.2rem; }
@@ -131,7 +206,69 @@
 
     <div class="page-content">
         <h1 class="section-script-title">Restaurants & Local Eats</h1>
-        <p class="coming-soon">Coming soon</p>
+
+        <!-- Breakfast -->
+        <div class="breakfast-block">
+            <p class="meal-label">Breakfast</p>
+            <ul class="breakfast-list">
+                <li>El Cardenal</li>
+                <li>San Angel Inn</li>
+                <li>Mendl</li>
+                <li>Lalo!</li>
+                <li>Klein's</li>
+            </ul>
+        </div>
+
+        <!-- Lunch & Dinner -->
+        <p class="lunch-label">Lunch & Dinner</p>
+        <div class="restaurants-grid">
+
+            <div class="restaurants-column">
+                <h3 class="area-title">Santa Fe</h3>
+                <div class="restaurant-item">Rokai</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Shu</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Loma Linda</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Petit Hunan</div>
+            </div>
+
+            <div class="restaurants-column">
+                <h3 class="area-title">Polanco</h3>
+                <div class="restaurant-item">La Once Mil</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">La Bonvi</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">La Barra de Fran</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">ER RRE un Bistro</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Entremar</div>
+            </div>
+
+            <div class="restaurants-column">
+                <h3 class="area-title">Roma / Condesa</h3>
+                <div class="restaurant-item">Maizajo</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Botánico</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Hugo</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Máximo</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Makan</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Contramar</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Rosetta</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Galanga</div>
+                <div class="section-divider"></div>
+                <div class="restaurant-item">Hank's Pizza Choza</div>
+            </div>
+
+        </div>
     </div>
 
 </body>
