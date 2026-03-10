@@ -125,14 +125,18 @@
             justify-content: center;
             gap: 0.5rem 2rem;
         }
-        .breakfast-list li {
+        .breakfast-list li a {
             font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
             font-size: 0.82rem;
             color: #232618;
             letter-spacing: 2px;
             text-transform: uppercase;
             padding: 0.4rem 0;
+            text-decoration: none;
+            display: block;
+            transition: opacity 0.2s;
         }
+        .breakfast-list li a:hover { opacity: 0.55; }
 
         /* Lunch & Dinner grid */
         .lunch-label {
@@ -167,14 +171,18 @@
             padding-bottom: 0.5rem;
             border-bottom: 1px solid #ece0be;
         }
-        .restaurant-item {
+        .restaurant-item a {
+            display: block;
             font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
             font-size: 0.82rem;
             color: #232618;
             letter-spacing: 2px;
             text-transform: uppercase;
             padding: 0.6rem 0;
+            text-decoration: none;
+            transition: opacity 0.2s;
         }
+        .restaurant-item a:hover { opacity: 0.55; }
         .section-divider {
             width: 100%;
             height: 1px;
@@ -211,11 +219,11 @@
         <div class="breakfast-block">
             <p class="meal-label">Breakfast</p>
             <ul class="breakfast-list">
-                <li>El Cardenal</li>
-                <li>San Angel Inn</li>
-                <li>Mendl</li>
-                <li>Lalo!</li>
-                <li>Klein's</li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=El+Cardenal+Palma+23+Centro+Historico+Mexico+City" target="_blank" rel="noopener">El Cardenal</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=San+Angel+Inn+Diego+Rivera+50+Mexico+City" target="_blank" rel="noopener">San Angel Inn</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Mendl+Delicatessen+Citlaltepetl+9+Condesa+Mexico+City" target="_blank" rel="noopener">Mendl</a></li>
+                <li><a href="https://www.google.com/maps/place/Lalo/@19.4154167,-99.1624152,15z" target="_blank" rel="noopener">Lalo!</a></li>
+                <li><a href="https://www.google.com/maps/search/?api=1&query=Kleins+Masaryk+360+Polanco+Mexico+City" target="_blank" rel="noopener">Klein's</a></li>
             </ul>
         </div>
 
@@ -225,47 +233,47 @@
 
             <div class="restaurants-column">
                 <h3 class="area-title">Santa Fe</h3>
-                <div class="restaurant-item">Rokai</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Rokai+Antonio+Dovali+Jaime+95+Santa+Fe+Mexico+City" target="_blank" rel="noopener">Rokai</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Shu</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Shu+restaurante+Calle+3+55+Santa+Fe+Mexico+City" target="_blank" rel="noopener">Shu</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Loma Linda</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Loma+Linda+Javier+Barros+Sierra+495+Santa+Fe+Mexico+City" target="_blank" rel="noopener">Loma Linda</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Petit Hunan</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Petit+Hunan+Santa+Fe+Mexico+City" target="_blank" rel="noopener">Petit Hunan</a></div>
             </div>
 
             <div class="restaurants-column">
                 <h3 class="area-title">Polanco</h3>
-                <div class="restaurant-item">La Once Mil</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=La+Once+Mil+Lomas+de+Chapultepec+Mexico+City" target="_blank" rel="noopener">La Once Mil</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">La Bonvi</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=La+Bonvi+Polanco+Mexico+City" target="_blank" rel="noopener">La Bonvi</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">La Barra de Fran</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=La+Barra+de+Fran+Emilio+Castelar+185+Polanco+Mexico+City" target="_blank" rel="noopener">La Barra de Fran</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">ER RRE un Bistro</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Er+Rre+Un+Bistro+Polanco+8+Mexico+City" target="_blank" rel="noopener">ER RRE un Bistro</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Entremar</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/place/entremar/data=!4m2!3m1!1s0x85d1f8aaf109bc29:0x463ee153c98a395c" target="_blank" rel="noopener">Entremar</a></div>
             </div>
 
             <div class="restaurants-column">
                 <h3 class="area-title">Roma / Condesa</h3>
-                <div class="restaurant-item">Maizajo</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Maizajo+Mexico+City" target="_blank" rel="noopener">Maizajo</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Botánico</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Botanico+Alfonso+Reyes+217+Condesa+Mexico+City" target="_blank" rel="noopener">Botánico</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Hugo</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Hugo+Wine+Bar+Veracruz+38+Roma+Norte+Mexico+City" target="_blank" rel="noopener">Hugo</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Máximo</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/place/Maximo/@19.4189482,-99.1602728,17z" target="_blank" rel="noopener">Máximo</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Makan</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Makan+Emilio+Donde+68b+Juarez+Mexico+City" target="_blank" rel="noopener">Makan</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Contramar</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Contramar+Durango+200+Roma+Mexico+City" target="_blank" rel="noopener">Contramar</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Rosetta</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Rosetta+Colima+166+Roma+Norte+Mexico+City" target="_blank" rel="noopener">Rosetta</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Galanga</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Galanga+Thai+Monterrey+204+Roma+Norte+Mexico+City" target="_blank" rel="noopener">Galanga</a></div>
                 <div class="section-divider"></div>
-                <div class="restaurant-item">Hank's Pizza Choza</div>
+                <div class="restaurant-item"><a href="https://www.google.com/maps/search/?api=1&query=Hanks+Pizza+Choza+Monterrey+192+Roma+Mexico+City" target="_blank" rel="noopener">Hank's Pizza Choza</a></div>
             </div>
 
         </div>

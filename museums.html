@@ -108,7 +108,8 @@
             align-items: center;
             gap: 0;
         }
-        .museum-item {
+        .museum-item a {
+            display: block;
             font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
             font-size: 0.85rem;
             color: #232618;
@@ -117,7 +118,10 @@
             padding: 1rem 0;
             width: 100%;
             max-width: 560px;
+            text-decoration: none;
+            transition: opacity 0.2s;
         }
+        .museum-item a:hover { opacity: 0.55; }
         .section-divider {
             width: 100%;
             max-width: 560px;
@@ -133,7 +137,7 @@
         @media (max-width: 600px) {
             .section-script-title { font-size: 2.2rem; }
             .nav-title { font-size: 1.5rem; }
-            .museum-item { font-size: 0.75rem; }
+            .museum-item a { font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -149,21 +153,21 @@
     <div class="page-content">
         <h1 class="section-script-title">Museums & Activities</h1>
         <ul class="museums-list">
-            <li class="museum-item">Museo Rufino Tamayo</li>
+            <li class="museum-item"><a href="https://www.google.com/maps/search/?api=1&query=Museo+Rufino+Tamayo+Reforma+Chapultepec+Mexico+City" target="_blank" rel="noopener">Museo Rufino Tamayo</a></li>
             <div class="section-divider"></div>
-            <li class="museum-item">MUAC — Museo Universitario Arte Contemporáneo</li>
+            <li class="museum-item"><a href="https://www.google.com/maps/search/?api=1&query=MUAC+Museo+Universitario+Arte+Contemporaneo+UNAM+Mexico+City" target="_blank" rel="noopener">MUAC — Museo Universitario Arte Contemporáneo</a></li>
             <div class="section-divider"></div>
-            <li class="museum-item">Palacio de Bellas Artes</li>
+            <li class="museum-item"><a href="https://www.google.com/maps/search/?api=1&query=Palacio+de+Bellas+Artes+Mexico+City" target="_blank" rel="noopener">Palacio de Bellas Artes</a></li>
             <div class="section-divider"></div>
-            <li class="museum-item">Museo Nacional de Antropología</li>
+            <li class="museum-item"><a href="https://www.google.com/maps/search/?api=1&query=Museo+Nacional+de+Antropologia+Mexico+City" target="_blank" rel="noopener">Museo Nacional de Antropología</a></li>
             <div class="section-divider"></div>
-            <li class="museum-item">Museo Frida Kahlo — Casa Azul</li>
+            <li class="museum-item"><a href="https://www.google.com/maps/search/?api=1&query=Museo+Frida+Kahlo+Casa+Azul+Coyoacan+Mexico+City" target="_blank" rel="noopener">Museo Frida Kahlo — Casa Azul</a></li>
             <div class="section-divider"></div>
-            <li class="museum-item">Luis Barragán Houses</li>
+            <li class="museum-item"><a href="https://www.google.com/maps/search/?api=1&query=Casa+Luis+Barragan+Francisco+Ramirez+12+Mexico+City" target="_blank" rel="noopener">Luis Barragán Houses</a></li>
             <div class="section-divider"></div>
-            <li class="museum-item">Pirámides de Teotihuacán</li>
+            <li class="museum-item"><a href="https://www.google.com/maps/search/?api=1&query=Piramides+de+Teotihuacan+Mexico" target="_blank" rel="noopener">Pirámides de Teotihuacán</a></li>
             <div class="section-divider"></div>
-            <li class="museum-item">Xochimilco</li>
+            <li class="museum-item"><a href="https://www.google.com/maps/search/?api=1&query=Xochimilco+Mexico+City" target="_blank" rel="noopener">Xochimilco</a></li>
         </ul>
     </div>
 
