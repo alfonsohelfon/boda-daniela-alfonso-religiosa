@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniela y Alfonso | Boda Religiosa</title>
+    <style>
+        /* --- 1. FONTS --- */
+        @font-face {
+            font-family: 'Bellissima Script';
+            src: url('Fonts/BellissimaScriptRedux-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-Italic.otf') format('opentype');
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-BookItalic.otf') format('opentype');
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-SemiBoldItalic.otf') format('opentype');
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-BoldItalic.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Practice';
+            src: url('Fonts/Practice-ExtraBold.otf') format('opentype');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        /* --- 2. GLOBAL RESET --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #fff8ea;
+            font-family: 'Practice', Georgia, serif;
+            color: #232618;
+        }
+
+        /* --- 3. NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            transition: background 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem 1.2rem 2rem;
+            border-bottom: 1px solid rgba(255, 248, 234, 0.4);
+            transition: border-color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links-wrapper {
+            display: flex;
+            gap: 4vw;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff8ea;
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: color 0.3s ease, opacity 0.3s ease;
+            font-weight: normal;
+        }
+
+        .nav-link:hover {
+            opacity: 0.7;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 20px;
+            position: relative;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #fff8ea;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger span:nth-child(1) { top: 0; }
+        .hamburger span:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .hamburger span:nth-child(3) { bottom: 0; }
+
+        /* Nav State: Dark Mode (for light backgrounds) */
+        nav.dark-mode .nav-link {
+            color: #232618;
+        }
+        nav.dark-mode .nav-container {
+            border-bottom: 1px solid #a79a6a;
+        }
+        nav.dark-mode .hamburger span {
+            background: #232618;
+        }
+
+        /* --- 4. SECTION: HOME --- */
+        #home {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('Images/Forest.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mobile-hero-image {
+            display: none;
+        }
+
+        .hero-monogram {
+            width: 280px;
+            height: auto;
+            z-index: 2;
+        }
+
+        /* --- 5. SECTION: ITINERARIO --- */
+        #itinerario {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            background-image: url('Images/Painting.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8rem 2rem 4rem 2rem;
+        }
+
+        .itinerario-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .event-block {
+            margin-bottom: 4rem;
+        }
+
+        .event-title {
+            font-family: 'Bellissima Script', cursive;
+            font-size: 4rem;
+            color: #fff8ea;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .event-description {
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: #fff8ea;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .event-location {
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #fff8ea;
+            line-height: 1.6;
+        }
+
+        .event-address {
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: #ece0be;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        /* --- 6. SECTION: TRANSPORTATION --- */
+        #transportation {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #3b3f21;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            padding: 6rem 4rem;
+            overflow: hidden;
+        }
+
+        .transport-decoration-left,
+        .transport-decoration-right {
+            position: absolute;
+            width: 300px;
+            height: auto;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .transport-decoration-left {
+            left: 0;
+            top: 10%;
+        }
+
+        .transport-decoration-right {
+            right: 0;
+            top: 10%;
+            transform: scaleX(-1);
+        }
+
+        .transport-col {
+            flex: 1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .transport-title {
+            font-family: 'Bellissima Script', cursive;
+            font-size: 3.5rem;
+            color: #fff8ea;
+            margin-bottom: 2rem;
+        }
+
+        .transport-subtitle {
+            font-family: 'Engravers MT', 'Copperplate', serif;
+            font-size: 0.85rem;
+            color: #fff8ea;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .transport-text {
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #fff8ea;
+            line-height: 1.8;
+            max-width: 350px;
+            margin-bottom: 1.5rem;
+        }
+
+        .umd-icon {
+            width: 80px;
+            height: 80px;
+            background: #000;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: 'Engravers MT', 'Copperplate', serif;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .umd-icon:hover {
+            transform: scale(1.05);
+        }
+
+        .umd-icon span:first-child {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* Transportation Toggle */
+        .transport-toggle {
+            display: flex;
+            border: 1px solid #fff8ea;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .toggle-btn {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            color: #fff8ea;
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .toggle-btn.active {
+            background: #a79a6a;
+            color: #fff8ea;
+        }
+
+        .transport-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 12px 20px;
+            background: transparent;
+            border: 1px solid #fff8ea;
+            border-radius: 30px;
+            color: #fff8ea;
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 0.9rem;
+            outline: none;
+            margin-bottom: 1rem;
+        }
+
+        .transport-input::placeholder {
+            color: #fff8ea;
+            opacity: 0.7;
+        }
+
+        .add-guest-link {
+            color: #fff8ea;
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            text-decoration: none;
+            margin-bottom: 2rem;
+        }
+
+        .add-guest-link:hover {
+            text-decoration: underline;
+        }
+
+        .send-btn {
+            font-family: 'Bellissima Script', cursive;
+            font-size: 2.5rem;
+            color: #fff8ea;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .send-btn:hover {
+            opacity: 0.7;
+        }
+
+        /* --- 7. SECTION: RSVP --- */
+        #rsvp {
+            min-height: 100vh;
+            width: 100%;
+            background-color: #fff8ea;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 6rem 2rem;
+        }
+
+        /* RSVP Pre-Click State */
+        .rsvp-pre-click {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .rsvp-pre-click:hover {
+            transform: scale(1.02);
+        }
+
+        .rsvp-tray {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            position: relative;
+        }
+
+        .rsvp-envelope-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Engravers MT', 'Copperplate', serif;
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        /* RSVP Post-Click State */
+        .rsvp-post-click {
+            display: none;
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .rsvp-post-click.active {
+            display: block;
+        }
+
+        .rsvp-pre-click.hidden {
+            display: none;
+        }
+
+        .rsvp-ribbon {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+
+        .rsvp-monogram {
+            width: 150px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .rsvp-title {
+            font-family: 'Engravers MT', 'Copperplate', serif;
+            font-size: 1.5rem;
+            color: #a79a6a;
+            letter-spacing: 5px;
+            margin-bottom: 2rem;
+        }
+
+        .rsvp-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .rsvp-toggle {
+            display: flex;
+            border: 1px solid #a79a6a;
+            border-radius: 30px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .rsvp-toggle-btn {
+            flex: 1;
+            padding: 15px 20px;
+            background: transparent;
+            border: none;
+            color: #a79a6a;
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .rsvp-toggle-btn.active {
+            background: #a79a6a;
+            color: #fff8ea;
+        }
+
+        .rsvp-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px 25px;
+            background: transparent;
+            border: 1px solid #a79a6a;
+            border-radius: 30px;
+            color: #a79a6a;
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .rsvp-input::placeholder {
+            color: #a79a6a;
+            opacity: 0.7;
+        }
+
+        .rsvp-garland {
+            width: 200px;
+            height: auto;
+            margin: 2rem 0;
+        }
+
+        .rsvp-deadline {
+            font-family: 'Bellissima Script', cursive;
+            font-size: 2.5rem;
+            color: #ece0be;
+            margin-top: 2rem;
+        }
+
+        /* --- 8. SECTION: REGISTRY --- */
+        #registry {
+            min-height: 100vh;
+            width: 100%;
+            background-color: #fff8ea;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .registry-gift {
+            width: 200px;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+
+        .registry-text {
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #232618;
+            line-height: 1.8;
+            max-width: 500px;
+            margin-bottom: 3rem;
+        }
+
+        .registry-title {
+            font-family: 'Bellissima Script', cursive;
+            font-size: 5rem;
+            color: #ece0be;
+            margin-bottom: 3rem;
+        }
+
+        .registry-links {
+            display: flex;
+            gap: 4rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .registry-link {
+            font-family: 'Engravers MT', 'Copperplate', serif;
+            font-size: 1.1rem;
+            color: #232618;
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: opacity 0.3s ease;
+        }
+
+        .registry-link:hover {
+            opacity: 0.6;
+        }
+
+        /* --- 9. SECTION: TO DO & TO STAY --- */
+        #todo-tostay {
+            width: 100%;
+            background-color: #fff8ea;
+        }
+
+        /* Hotels Sub-Section */
+        .hotels-section {
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .section-script-title {
+            font-family: 'Bellissima Script', cursive;
+            font-size: 4rem;
+            color: #a79a6a;
+            margin-bottom: 3rem;
+        }
+
+        .hotels-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hotel-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 280px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hotel-key {
+            width: 220px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .hotel-name {
+            font-family: 'Engravers MT', 'Copperplate', serif;
+            font-size: 0.9rem;
+            color: #232618;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .hotel-desc {
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Bars & Drinks Sub-Section */
+        .bars-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            border-top: 1px solid #a79a6a;
+        }
+
+        .bars-grid {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 2rem;
+        }
+
+        .bars-column {
+            flex: 1;
+            max-width: 350px;
+        }
+
+        .bars-area-title {
+            font-family: 'Engravers MT', 'Copperplate', serif;
+            font-size: 0.9rem;
+            color: #a79a6a;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ece0be;
+        }
+
+        .bar-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .bar-name {
+            font-family: 'Engravers MT', 'Copperplate', serif;
+            font-size: 0.85rem;
+            color: #232618;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .bar-address {
+            font-family: 'Practice', Georgia, serif;
+            font-style: italic;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: #a79a6a;
+            margin: 1rem 0;
+        }
+
+        /* To Do Sub-Section */
+        .todo-section {
+            padding: 6rem 2rem;
+            text-align: center;
+            border-top: 1px solid #a79a6a;
+        }
+
+        .todo-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .todo-category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            width: 180px;
+        }
+
+        .todo-category:hover {
+            transform: translateY(-5px);
+        }
+
+        .todo-icon {
+            width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .todo-label {
+            font-family: 'Engravers MT', 'Copperplate', serif;
+            font-size: 0.75rem;
+            color: #232618;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 900px) {
+            .nav-container {
+                justify-content: flex-end;
+                position: relative;
+            }
+            .hamburger {
+                display: block;
+                margin-left: auto;
+            }
+            .nav-links-wrapper {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(35, 38, 24, 0.95);
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+                padding: 2rem 0;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            .nav-links-wrapper.active {
+                max-height: 500px;
+                opacity: 1;
+            }
+            nav.dark-mode .nav-links-wrapper {
+                background-color: rgba(255, 248, 234, 0.98);
+            }
+            nav.dark-mode .nav-links-wrapper .nav-link {
+                color: #232618;
+            }
+            .nav-link {
+                font-size: 0.9rem;
+            }
+
+            #home {
+                background: none;
+                background-color: #232618;
+            }
+            .mobile-hero-image {
+                display: block;
+                width: 100%;
+                height: 100vh;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .hero-monogram {
+                position: relative;
+                z-index: 2;
+                width: 200px;
+            }
+
+            #itinerario {
+                background-image: url('Images/Mobile-Painting.png');
+                padding: 6rem 1.5rem;
+            }
+            .event-title {
+                font-size: 2.8rem;
+            }
+
+            #transportation {
+                flex-direction: column;
+                padding: 4rem 2rem;
+            }
+            .transport-col {
+                padding: 2rem 0;
+            }
+            .transport-decoration-left,
+            .transport-decoration-right {
+                display: none;
+            }
+            .transport-title {
+                font-size: 2.5rem;
+            }
+
+            .rsvp-ribbon {
+                max-width: 100%;
+            }
+            .rsvp-deadline {
+                font-size: 1.8rem;
+            }
+
+            .hotels-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .hotel-key {
+                width: 180px;
+            }
+
+            .bars-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .todo-grid {
+                gap: 2rem;
+            }
+            .todo-category {
+                width: 140px;
+            }
+            .todo-icon {
+                width: 80px;
+            }
+
+            .registry-title {
+                font-size: 3.5rem;
+            }
+            .registry-links {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .event-title {
+                font-size: 2.2rem;
+            }
+            .section-script-title {
+                font-size: 2.8rem;
+            }
+            .rsvp-monogram {
+                width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-links-wrapper" id="navMenu">
+                <a href="#home" class="nav-link" onclick="closeMenu()">Home</a>
+                <a href="#itinerario" class="nav-link" onclick="closeMenu()">Itinerario</a>
+                <a href="#todo-tostay" class="nav-link" onclick="closeMenu()">To Do & To Stay</a>
+                <a href="#rsvp" class="nav-link" onclick="closeMenu()">RSVP</a>
+                <a href="#registry" class="nav-link" onclick="closeMenu()">Registry</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME / HERO -->
+    <section id="home">
+        <img src="Images/Mobile-Forest.png" alt="Forest Background" class="mobile-hero-image">
+        <img src="Icons/icon-04.png" alt="D&A Monogram" class="hero-monogram">
+    </section>
+
+    <!-- ITINERARIO -->
+    <section id="itinerario">
+        <div class="itinerario-content">
+            <div class="event-block">
+                <h2 class="event-title">Chuppah Ceremony</h2>
+                <p class="event-description">
+                    The Religious Ceremony will take<br>
+                    place at the Maguen David<br>
+                    "SHAARE TEFILA" Abud Attie<br>
+                    Synagogue.
+                </p>
+                <p class="event-location">
+                    Bosque de Sabinos 163,<br>
+                    Col. Bosques de las Lomas
+                </p>
+            </div>
+
+            <div class="event-block">
+                <h2 class="event-title">Reception</h2>
+                <p class="event-description">
+                    The Reception and Banquet will be<br>
+                    held after the ceremony at<br>
+                    El "Jardin de los Secretos" located<br>
+                    at "Ex Convento Desierto de Los<br>
+                    Leones"
+                </p>
+                <p class="event-address">
+                    Carr. Mexico - Toluca 05050,<br>
+                    Cuajimalpa de Morelos,<br>
+                    05020 La Venta, CDMX
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSPORTATION -->
+    <section id="transportation">
+        <img src="Icons/icon-27.png" alt="" class="transport-decoration-left">
+        <img src="Icons/icon-27.png" alt="" class="transport-decoration-right">
+
+        <div class="transport-col">
+            <h2 class="transport-title">Transportation</h2>
+            <h3 class="transport-subtitle">Getting Around CDMX</h3>
+            <p class="transport-text">
+                Ubers, DiDi and Taxi cabs are available almost always, we reccomend using the UMD App - Uber Maguen David: which is a safer option which matches you with Jewish Drivers and can be booked in advance.
+            </p>
+            <p class="transport-text">
+                The app can be found and downloaded in the app store, or you can click the icon for a direct download link.
+            </p>
+            <div class="umd-icon">
+                <span>UMD</span>
+                <span>TAXI</span>
+            </div>
+        </div>
+
+        <div class="transport-col">
+            <h2 class="transport-title">Getting There</h2>
+            <h3 class="transport-subtitle">Desierto de los Leones</h3>
+            <p class="transport-text">
+                The Venue Location has limited reception / cellular signal, therefore there is no reception for Ubers or UMD's. We reccomend pre booking a ride back, or we will be offering tranportation from the venue to the <strong>Westin Hotel</strong> every 45 min, starting at 8:30 pm.
+            </p>
+            <p class="transport-text">
+                Please fill out transportation necesities.
+            </p>
+
+            <div class="transport-toggle">
+                <button class="toggle-btn active" onclick="toggleTransport(this)">Will Use Transportation</button>
+                <button class="toggle-btn" onclick="toggleTransport(this)">Will Not Use Transportation</button>
+            </div>
+
+            <input type="text" class="transport-input" placeholder="Name">
+            <a href="#" class="add-guest-link">+ Add Another Guest</a>
+            <button class="send-btn">Send</button>
+        </div>
+    </section>
+
+    <!-- RSVP -->
+    <section id="rsvp">
+        <!-- Pre-Click State -->
+        <div class="rsvp-pre-click" id="rsvpPreClick" onclick="showRsvpForm()">
+            <div style="position: relative; display: inline-block;">
+                <img src="Icons/icon-17.png" alt="RSVP Tray" class="rsvp-tray">
+                <span class="rsvp-envelope-text">Click to RSVP</span>
+            </div>
+        </div>
+
+        <!-- Post-Click State -->
+        <div class="rsvp-post-click" id="rsvpPostClick">
+            <img src="Icons/icon-19.png" alt="Decorative Ribbon" class="rsvp-ribbon">
+
+            <form class="rsvp-form" id="rsvpForm">
+                <div class="rsvp-toggle">
+                    <button type="button" class="rsvp-toggle-btn active" onclick="toggleRsvp(this)">Will Attend</button>
+                    <button type="button" class="rsvp-toggle-btn" onclick="toggleRsvp(this)">Will Not Attend</button>
+                </div>
+
+                <input type="text" class="rsvp-input" placeholder="Name" required>
+                <input type="email" class="rsvp-input" placeholder="E - Mail" required>
+                <input type="tel" class="rsvp-input" placeholder="Cell - Phone (+ Country Code)">
+            </form>
+
+            <img src="Icons/icon-20.png" alt="Decorative Garland" class="rsvp-garland">
+
+            <p class="rsvp-deadline">Please Rsvp Before April 1st.</p>
+        </div>
+    </section>
+
+    <!-- REGISTRY -->
+    <section id="registry">
+        <img src="Icons/icon-21.png" alt="Gift" class="registry-gift">
+
+        <p class="registry-text">
+            Your presence at our wedding our greatest gift.<br>
+            If you would like to contribute to the start of our<br>
+            life together, we've included a few options below.
+        </p>
+        <p class="registry-text">
+            As many of you will be traveling to celebrate with<br>
+            us, please know gifts are completely optional.
+        </p>
+
+        <h2 class="registry-title">Registry</h2>
+
+        <div class="registry-links">
+            <a href="#" class="registry-link">Liverpool</a>
+            <a href="#" class="registry-link">Palacio de<br>Hierro</a>
+            <a href="#" class="registry-link">Amazon</a>
+        </div>
+    </section>
+
+    <!-- TO DO & TO STAY -->
+    <section id="todo-tostay">
+        <!-- Hotels -->
+        <div class="hotels-section">
+            <h2 class="section-script-title">Hotels</h2>
+            <div class="hotels-grid">
+                <div class="hotel-card">
+                    <img src="Icons/icon-01.png" alt="Ritz Carlton Key" class="hotel-key">
+                    <h3 class="hotel-name">Ritz Carlton</h3>
+                    <p class="hotel-desc">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                    </p>
+                </div>
+                <div class="hotel-card">
+                    <img src="Icons/icon-02.png" alt="Westin Santa Fe Key" class="hotel-key">
+                    <h3 class="hotel-name">Westin Santa Fe</h3>
+                    <p class="hotel-desc">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                    </p>
+                </div>
+                <div class="hotel-card">
+                    <img src="Icons/icon-03.png" alt="Brick Hotel Key" class="hotel-key">
+                    <h3 class="hotel-name">Brick Hotel</h3>
+                    <p class="hotel-desc">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bars & Drinks -->
+        <div class="bars-section">
+            <h2 class="section-script-title">Bars & Drinks</h2>
+            <div class="bars-grid">
+                <div class="bars-column">
+                    <h3 class="bars-area-title">Polanco</h3>
+                    <div class="bar-item">
+                        <h4 class="bar-name">Ticuchi</h4>
+                        <p class="bar-address">Petrarca 254<br>Polanco, Polanco V Secc</p>
+                    </div>
+                </div>
+                <div class="bars-column">
+                    <h3 class="bars-area-title">Condesa</h3>
+                    <div class="bar-item">
+                        <h4 class="bar-name">Caiman</h4>
+                        <p class="bar-address">Av Nuevo Leon 120,<br>Hipodromo, Cuauhtemoc</p>
+                    </div>
+                    <div class="section-divider"></div>
+                    <div class="bar-item">
+                        <h4 class="bar-name">Trampa</h4>
+                        <p class="bar-address">Alfonso Reyes 120,<br>Hipodromo Condesa, Cuauhtemoc</p>
+                    </div>
+                    <div class="section-divider"></div>
+                    <div class="bar-item">
+                        <h4 class="bar-name">Hule</h4>
+                        <p class="bar-address">Av Michoacan 75<br>Colonia Condesa, Cuauhtemoc</p>
+                    </div>
+                </div>
+                <div class="bars-column">
+                    <h3 class="bars-area-title">Roma & Juarez</h3>
+                    <div class="bar-item">
+                        <h4 class="bar-name">Tokyo Music Bar</h4>
+                        <p class="bar-address">Rio Panuco 132,<br>Cuauhtemoc</p>
+                    </div>
+                    <div class="section-divider"></div>
+                    <div class="bar-item">
+                        <h4 class="bar-name">El Minutito</h4>
+                        <p class="bar-address">Londres 28,<br>Juarez, Cuauhtemoc</p>
+                    </div>
+                    <div class="section-divider"></div>
+                    <div class="bar-item">
+                        <h4 class="bar-name">Handshake Speakeasy</h4>
+                        <p class="bar-address">C. Amberes 65, J<br>uarez, Cuauhtemoc</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- To Do -->
+        <div class="todo-section">
+            <h2 class="section-script-title">To Do</h2>
+            <div class="todo-grid">
+                <div class="todo-category">
+                    <img src="Icons/icon-07.png" alt="Restaurants" class="todo-icon">
+                    <span class="todo-label">Restaurants<br>&<br>Local Eats</span>
+                </div>
+                <div class="todo-category">
+                    <img src="Icons/icon-08.png" alt="Bars & Drinks" class="todo-icon">
+                    <span class="todo-label">Bars<br>&<br>Drinks</span>
+                </div>
+                <div class="todo-category">
+                    <img src="Icons/icon-09.png" alt="Bakeries & Coffee" class="todo-icon">
+                    <span class="todo-label">Bakeries<br>&<br>Coffee</span>
+                </div>
+                <div class="todo-category">
+                    <img src="Icons/icon-10.png" alt="Museums & Stores" class="todo-icon">
+                    <span class="todo-label">Museums<br>&<br>Stores</span>
+                </div>
+                <div class="todo-category">
+                    <img src="Icons/icon-11.png" alt="Beauty & Salons" class="todo-icon">
+                    <span class="todo-label">Beauty<br>&<br>Salons</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navbar = document.getElementById('navbar');
+            const homeSection = document.getElementById('home');
+            const navMenu = document.getElementById('navMenu');
+
+            // Scroll Logic - Switch nav mode based on section
+            if (navbar && homeSection) {
+                const sections = document.querySelectorAll('section');
+
+                window.addEventListener('scroll', () => {
+                    const scrollPos = window.scrollY + 100;
+
+                    // Check which section we're in
+                    let inDarkSection = false;
+                    sections.forEach(section => {
+                        const id = section.id;
+                        const top = section.offsetTop;
+                        const bottom = top + section.offsetHeight;
+
+                        if (scrollPos >= top && scrollPos < bottom) {
+                            // Dark nav for light backgrounds
+                            if (id === 'rsvp' || id === 'registry' || id === 'todo-tostay') {
+                                inDarkSection = true;
+                            }
+                        }
+                    });
+
+                    if (inDarkSection) {
+                        navbar.classList.add('dark-mode');
+                    } else {
+                        navbar.classList.remove('dark-mode');
+                    }
+                });
+            }
+
+            // Toggle menu function
+            window.toggleMenu = function() {
+                if (navMenu) {
+                    navMenu.classList.toggle('active');
+                }
+            };
+
+            window.closeMenu = function() {
+                if (navMenu) {
+                    navMenu.classList.remove('active');
+                }
+            };
+
+            // Transportation toggle
+            window.toggleTransport = function(btn) {
+                const siblings = btn.parentElement.querySelectorAll('.toggle-btn');
+                siblings.forEach(s => s.classList.remove('active'));
+                btn.classList.add('active');
+            };
+
+            // RSVP toggle
+            window.toggleRsvp = function(btn) {
+                const siblings = btn.parentElement.querySelectorAll('.rsvp-toggle-btn');
+                siblings.forEach(s => s.classList.remove('active'));
+                btn.classList.add('active');
+            };
+
+            // Show RSVP form
+            window.showRsvpForm = function() {
+                const preClick = document.getElementById('rsvpPreClick');
+                const postClick = document.getElementById('rsvpPostClick');
+                if (preClick && postClick) {
+                    preClick.classList.add('hidden');
+                    postClick.classList.add('active');
+                }
+            };
+        });
+    </script>
+
+</body>
+</html>
