@@ -379,10 +379,16 @@
             font-size: 0.85rem;
             text-decoration: none;
             margin-bottom: 2rem;
+            cursor: pointer;
         }
 
         .add-guest-link:hover {
             text-decoration: underline;
+        }
+
+        .rsvp-add-guest-link {
+            color: #a79a6a;
+            margin-bottom: 0.5rem;
         }
 
         .send-btn {
@@ -1004,8 +1010,10 @@
                 <button class="toggle-btn" onclick="toggleTransport(this)">Will Not Use Transportation</button>
             </div>
 
-            <input type="text" class="transport-input" placeholder="Name">
-            <a href="#" class="add-guest-link">+ Add Another Guest</a>
+            <div id="transportGuests">
+                <input type="text" class="transport-input" placeholder="Name">
+            </div>
+            <a href="#" class="add-guest-link" onclick="addGuest('transportGuests', 'transport-input'); return false;">+ Add Another Guest</a>
             <button class="send-btn">Send</button>
         </div>
     </section>
@@ -1030,7 +1038,10 @@
                     <button type="button" class="rsvp-toggle-btn" onclick="toggleRsvp(this)">Will Not Attend</button>
                 </div>
 
-                <input type="text" class="rsvp-input" placeholder="Name" required>
+                <div id="rsvpGuests">
+                    <input type="text" class="rsvp-input" placeholder="Name" required>
+                </div>
+                <a href="#" class="add-guest-link rsvp-add-guest-link" onclick="addGuest('rsvpGuests', 'rsvp-input'); return false;">+ Add Another Guest</a>
                 <input type="email" class="rsvp-input" placeholder="E - Mail" required>
                 <input type="tel" class="rsvp-input" placeholder="Cell - Phone (+ Country Code)">
             </form>
@@ -1184,6 +1195,18 @@
                 const siblings = btn.parentElement.querySelectorAll('.rsvp-toggle-btn');
                 siblings.forEach(s => s.classList.remove('active'));
                 btn.classList.add('active');
+            };
+
+            // Add guest input
+            window.addGuest = function(containerId, inputClass) {
+                const container = document.getElementById(containerId);
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.className = inputClass;
+                input.placeholder = 'Name of Guest';
+                input.style.marginTop = '0.75rem';
+                container.appendChild(input);
+                input.focus();
             };
 
             // Show RSVP form
