@@ -1013,7 +1013,7 @@
             <div id="transportGuests">
                 <input type="text" class="transport-input" placeholder="Name">
             </div>
-            <a href="#" class="add-guest-link" onclick="addGuest('transportGuests', 'transport-input'); return false;">+ Add Another Guest</a>
+            <a href="#" class="add-guest-link" onclick="addGuest('transportGuests', 'transport-input', this); return false;">+ Add Another Guest</a>
             <button class="send-btn">Send</button>
         </div>
     </section>
@@ -1041,7 +1041,7 @@
                 <div id="rsvpGuests">
                     <input type="text" class="rsvp-input" placeholder="Name" required>
                 </div>
-                <a href="#" class="add-guest-link rsvp-add-guest-link" onclick="addGuest('rsvpGuests', 'rsvp-input'); return false;">+ Add Another Guest</a>
+                <a href="#" class="add-guest-link rsvp-add-guest-link" onclick="addGuest('rsvpGuests', 'rsvp-input', this); return false;">+ Add Another Guest</a>
                 <input type="email" class="rsvp-input" placeholder="E - Mail" required>
                 <input type="tel" class="rsvp-input" placeholder="Cell - Phone (+ Country Code)">
             </form>
@@ -1197,9 +1197,10 @@
                 btn.classList.add('active');
             };
 
-            // Add guest input
-            window.addGuest = function(containerId, inputClass) {
+            // Add guest input (max 1 additional)
+            window.addGuest = function(containerId, inputClass, linkEl) {
                 const container = document.getElementById(containerId);
+                if (container.querySelectorAll('input').length >= 2) return;
                 const input = document.createElement('input');
                 input.type = 'text';
                 input.className = inputClass;
@@ -1207,6 +1208,7 @@
                 input.style.marginTop = '0.75rem';
                 container.appendChild(input);
                 input.focus();
+                if (linkEl) linkEl.style.display = 'none';
             };
 
             // Show RSVP form
