@@ -75,10 +75,17 @@
             padding: 1.5rem 0;
             z-index: 1000;
             transition: background 0.3s ease;
+            overflow: hidden;
+        }
+
+        nav::before {
+            content: '';
+            position: absolute;
+            inset: 0;
             background: rgba(35, 38, 24, 0.4);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
-            overflow: hidden;
+            z-index: -1;
         }
 
         .nav-container {
