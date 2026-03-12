@@ -2,14 +2,22 @@
 // Paste this entire file into Google Apps Script (Extensions → Apps Script)
 // Then deploy as a Web App.
 
+function getOrCreateSheet(ss, name) {
+  var sheet = ss.getSheetByName(name);
+  if (!sheet) {
+    sheet = ss.insertSheet(name);
+  }
+  return sheet;
+}
+
 function doPost(e) {
   try {
-    const ss = SpreadsheetApp.getActiveSpreadsheet();
-    const data = JSON.parse(e.postData.contents);
-    const timestamp = new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' });
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var data = JSON.parse(e.postData.contents);
+    var timestamp = new Date().toLocaleString('es-MX', { timeZone: 'America/Mexico_City' });
 
     if (data.formType === 'transportation') {
-      const sheet = ss.getSheetByName('Transportation');
+      var sheet = getOrCreateSheet(ss, 'Transportation');
       sheet.appendRow([
         timestamp,
         data.transportChoice,
@@ -17,7 +25,7 @@ function doPost(e) {
         data.guestName || ''
       ]);
     } else if (data.formType === 'rsvp') {
-      const sheet = ss.getSheetByName('RSVP');
+      var sheet = getOrCreateSheet(ss, 'RSVP');
       sheet.appendRow([
         timestamp,
         data.attendance,
@@ -39,19 +47,21 @@ function doPost(e) {
   }
 }
 
-// Adds column headers on first run — run this once manually after setup
+// Run this once manually to set up headers and sheet tabs
 function setupHeaders() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
 
-  const rsvp = ss.getSheetByName('RSVP');
+  var rsvp = getOrCreateSheet(ss, 'RSVP');
   rsvp.getRange('A1:F1').setValues([[
     'Timestamp', 'Attendance', 'Name', 'Guest Name', 'Email', 'Phone'
   ]]);
   rsvp.getRange('A1:F1').setFontWeight('bold');
 
-  const transport = ss.getSheetByName('Transportation');
+  var transport = getOrCreateSheet(ss, 'Transportation');
   transport.getRange('A1:D1').setValues([[
     'Timestamp', 'Transportation Choice', 'Name', 'Guest Name'
   ]]);
   transport.getRange('A1:D1').setFontWeight('bold');
+
+  SpreadsheetApp.getUi().alert('Setup complete! Both sheets are ready.');
 }
