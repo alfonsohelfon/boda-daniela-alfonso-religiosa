@@ -360,7 +360,6 @@
             border: 1px solid #fff8ea;
             border-radius: 30px;
             overflow: hidden;
-            margin: 1.5rem 0;
             width: 100%;
         }
 
@@ -1073,15 +1072,17 @@
                 Please fill out transportation necesities.
             </p>
 
-            <div class="transport-toggle">
-                <button class="toggle-btn active" onclick="toggleTransport(this)">Will Use Transportation</button>
-                <button class="toggle-btn" onclick="toggleTransport(this)">Will Not Use Transportation</button>
-            </div>
+            <div style="width:100%;max-width:400px;margin:0 auto;display:flex;flex-direction:column;align-items:stretch;">
+                <div class="transport-toggle">
+                    <button class="toggle-btn active" onclick="toggleTransport(this)">Will Use Transportation</button>
+                    <button class="toggle-btn" onclick="toggleTransport(this)">Will Not Use Transportation</button>
+                </div>
 
-            <div id="transportGuests">
-                <input type="text" class="transport-input" placeholder="Name">
+                <div id="transportGuests" style="margin-top:1rem;">
+                    <input type="text" class="transport-input" placeholder="Name">
+                </div>
+                <a href="#" class="add-guest-link" style="text-align:center;margin-top:0.5rem;" onclick="addGuest('transportGuests', 'transport-input', this); return false;">+ Add Another Guest</a>
             </div>
-            <a href="#" class="add-guest-link" onclick="addGuest('transportGuests', 'transport-input', this); return false;">+ Add Another Guest</a>
             <button class="send-btn" onclick="submitTransport(this); return false;">Send</button>
             <p id="transportMsg" style="color:#fff8ea;font-family:'Practice',Georgia,serif;font-style:italic;font-size:0.9rem;margin-top:0.5rem;display:none;"></p>
         </div>
