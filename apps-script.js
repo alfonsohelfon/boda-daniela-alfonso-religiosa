@@ -63,5 +63,5 @@ function setupHeaders() {
   ]]);
   transport.getRange('A1:D1').setFontWeight('bold');
 
-  SpreadsheetApp.getUi().alert('Setup complete! Both sheets are ready.');
+  Logger.log('Setup complete! Both sheets are ready.');
 }
