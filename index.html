@@ -1073,7 +1073,8 @@
                 <input type="text" class="transport-input" placeholder="Name">
             </div>
             <a href="#" class="add-guest-link" onclick="addGuest('transportGuests', 'transport-input', this); return false;">+ Add Another Guest</a>
-            <button class="send-btn">Send</button>
+            <button class="send-btn" onclick="submitTransport(this); return false;">Send</button>
+            <p id="transportMsg" style="color:#fff8ea;font-family:'Practice',Georgia,serif;font-style:italic;font-size:0.9rem;margin-top:0.5rem;display:none;"></p>
         </div>
     </section>
 
@@ -1104,6 +1105,9 @@
                 <input type="email" class="rsvp-input" placeholder="E - Mail" required>
                 <input type="tel" class="rsvp-input" placeholder="Cell - Phone (+ Country Code)">
             </form>
+
+            <button type="button" class="send-btn" style="color:#a79a6a;" onclick="submitRsvp(this);">Send</button>
+            <p id="rsvpMsg" style="color:#a79a6a;font-family:'Practice',Georgia,serif;font-style:italic;font-size:0.9rem;margin-top:0.5rem;display:none;"></p>
 
             <img src="Icons/icon-20.png" alt="Decorative Garland" class="rsvp-garland">
 
@@ -1269,6 +1273,52 @@
                 input.focus();
                 if (linkEl) linkEl.style.display = 'none';
             };
+
+            // ---- Google Sheets integration ----
+            const SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+
+            window.submitTransport = function(btn) {
+                const choice = document.querySelector('.toggle-btn.active')?.textContent?.trim() || '';
+                const inputs = document.querySelectorAll('#transportGuests input');
+                const name = inputs[0]?.value?.trim() || '';
+                const guestName = inputs[1]?.value?.trim() || '';
+                const msg = document.getElementById('transportMsg');
+
+                if (!name) { msg.textContent = 'Please enter your name.'; msg.style.display = 'block'; return; }
+
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify({ formType: 'transportation', transportChoice: choice, name, guestName })
+                })
+                .then(() => { msg.textContent = '✓ Received! Thank you.'; msg.style.display = 'block'; })
+                .catch(() => { msg.textContent = 'Something went wrong. Please try again.'; msg.style.display = 'block'; btn.disabled = false; btn.style.opacity = '1'; });
+            };
+
+            window.submitRsvp = function(btn) {
+                const attendance = document.querySelector('.rsvp-toggle-btn.active')?.textContent?.trim() || '';
+                const rsvpInputs = document.querySelectorAll('#rsvpGuests input');
+                const name = rsvpInputs[0]?.value?.trim() || '';
+                const guestName = rsvpInputs[1]?.value?.trim() || '';
+                const emailEl = document.querySelector('#rsvpForm input[type="email"]');
+                const phoneEl = document.querySelector('#rsvpForm input[type="tel"]');
+                const email = emailEl?.value?.trim() || '';
+                const phone = phoneEl?.value?.trim() || '';
+                const msg = document.getElementById('rsvpMsg');
+
+                if (!name || !email) { msg.textContent = 'Please fill in your name and email.'; msg.style.display = 'block'; return; }
+
+                btn.disabled = true;
+                btn.style.opacity = '0.5';
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    body: JSON.stringify({ formType: 'rsvp', attendance, name, guestName, email, phone })
+                })
+                .then(() => { msg.textContent = '✓ RSVP received! Thank you.'; msg.style.display = 'block'; })
+                .catch(() => { msg.textContent = 'Something went wrong. Please try again.'; msg.style.display = 'block'; btn.disabled = false; btn.style.opacity = '1'; });
+            };
+            // ---- End Google Sheets integration ----
 
             // Show RSVP form
             window.showRsvpForm = function() {
