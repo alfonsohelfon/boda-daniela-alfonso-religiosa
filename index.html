@@ -1221,9 +1221,38 @@
     <section id="faq">
         <div class="hotels-section">
             <img src="Icons/FAQ.png" alt="FAQ" style="max-width:150px;height:auto;display:block;margin:0 auto 3rem auto;">
-            <p class="hotel-desc" style="max-width:600px;margin:0 auto;text-align:center;font-size:1rem;color:#666;">
-                Coming soon.
-            </p>
+            <div style="max-width:700px;margin:0 auto;text-align:left;">
+
+                <!-- Q1 -->
+                <div class="faq-item" onclick="toggleFaq(this)" style="border-bottom:1px solid #a79a6a;padding:1.5rem 0;cursor:pointer;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
+                        <p style="font-family:'Engravers MT','Copperplate','Copperplate Gothic Light',serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#3a3226;margin:0;">Where is the wedding?</p>
+                        <span class="faq-icon" style="font-size:1.2rem;color:#a79a6a;flex-shrink:0;transition:transform 0.3s ease;">+</span>
+                    </div>
+                    <div class="faq-answer" style="display:none;margin-top:1rem;">
+                        <p class="hotel-desc" style="font-size:0.9rem;color:#555;line-height:1.8;">
+                            The Banquet and Reception will be held at a remote location inside "El Desierto de Los Leones." Please note that there is none to very limited cellphone service — we recommend getting there via Uber. For the return, Uber won't be available, so we will be offering transport back to the Westin Santa Fe hotel. If needed, please reserve a spot <a href="#" style="color:#a79a6a;text-decoration:underline;">here</a>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="faq-item" onclick="toggleFaq(this)" style="border-bottom:1px solid #a79a6a;padding:1.5rem 0;cursor:pointer;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;">
+                        <p style="font-family:'Engravers MT','Copperplate','Copperplate Gothic Light',serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#3a3226;margin:0;">What should I wear?</p>
+                        <span class="faq-icon" style="font-size:1.2rem;color:#a79a6a;flex-shrink:0;transition:transform 0.3s ease;">+</span>
+                    </div>
+                    <div class="faq-answer" style="display:none;margin-top:1rem;">
+                        <p class="hotel-desc" style="font-size:0.9rem;color:#555;line-height:1.8;">
+                            The dress code for our wedding is formal attire. For women we recommend long or midi dresses; for men, a tux or a suit — whichever is preferred.
+                        </p>
+                        <p class="hotel-desc" style="font-size:0.9rem;color:#555;line-height:1.8;margin-top:0.75rem;">
+                            For the religious ceremony held in the synagogue, women are required to cover their shoulders. We recommend bringing a shawl, which can also be worn later in the evening in case it gets cooler at night.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
@@ -1274,6 +1303,16 @@
                 if (navMenu) {
                     navMenu.classList.remove('active');
                 }
+            };
+
+            // FAQ accordion toggle
+            window.toggleFaq = function(item) {
+                const answer = item.querySelector('.faq-answer');
+                const icon = item.querySelector('.faq-icon');
+                const isOpen = answer.style.display === 'block';
+                answer.style.display = isOpen ? 'none' : 'block';
+                icon.textContent = isOpen ? '+' : '−';
+                icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
             };
 
             // Transportation toggle
