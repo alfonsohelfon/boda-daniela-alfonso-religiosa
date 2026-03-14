@@ -150,6 +150,31 @@
             background: #232618;
         }
 
+        /* --- LANGUAGE BUTTON --- */
+        .lang-btn {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: 1px solid rgba(255, 248, 234, 0.7);
+            color: #fff8ea;
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            padding: 5px 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+        .lang-btn:hover {
+            opacity: 0.7;
+        }
+        nav.dark-mode .lang-btn {
+            border-color: rgba(35, 38, 24, 0.7);
+            color: #232618;
+        }
+
         /* --- 4. SECTION: HOME --- */
         #home {
             position: relative;
@@ -854,6 +879,9 @@
                 display: block;
                 margin-left: auto;
             }
+            .lang-btn {
+                right: 4rem;
+            }
             .nav-links-wrapper {
                 position: absolute;
                 top: 100%;
@@ -988,15 +1016,16 @@
                 <span></span>
             </button>
             <div class="nav-links-wrapper" id="navMenu">
-                <a href="#home" class="nav-link" onclick="closeMenu()">Home</a>
-                <a href="#itinerary" class="nav-link" onclick="closeMenu()">Itinerary</a>
-                <a href="#transportation" class="nav-link" onclick="closeMenu()">Transport</a>
-                <a href="#rsvp" class="nav-link" onclick="closeMenu()">RSVP</a>
-                <a href="#hotels" class="nav-link" onclick="closeMenu()">Hotels</a>
-                <a href="#todo" class="nav-link" onclick="closeMenu()">To Do</a>
-                <a href="#registry" class="nav-link" onclick="closeMenu()">Registry</a>
-                <a href="#faq" class="nav-link" onclick="closeMenu()">FAQ</a>
+                <a href="#home" class="nav-link" onclick="closeMenu()" data-i18n="nav-home">Home</a>
+                <a href="#itinerary" class="nav-link" onclick="closeMenu()" data-i18n="nav-itinerary">Itinerary</a>
+                <a href="#transportation" class="nav-link" onclick="closeMenu()" data-i18n="nav-transport">Transport</a>
+                <a href="#rsvp" class="nav-link" onclick="closeMenu()" data-i18n="nav-rsvp">RSVP</a>
+                <a href="#hotels" class="nav-link" onclick="closeMenu()" data-i18n="nav-hotels">Hotels</a>
+                <a href="#todo" class="nav-link" onclick="closeMenu()" data-i18n="nav-todo">To Do</a>
+                <a href="#registry" class="nav-link" onclick="closeMenu()" data-i18n="nav-registry">Registry</a>
+                <a href="#faq" class="nav-link" onclick="closeMenu()" data-i18n="nav-faq">FAQ</a>
             </div>
+            <button class="lang-btn" onclick="toggleLang()" id="langBtn">ES</button>
         </div>
     </nav>
 
@@ -1010,8 +1039,8 @@
     <section id="itinerary">
         <div class="itinerario-content">
             <div class="event-block">
-                <h2 class="event-title">Chuppah Ceremony</h2>
-                <p class="event-description">
+                <h2 class="event-title" data-i18n="ceremony-title">Chuppah Ceremony</h2>
+                <p class="event-description" data-i18n="ceremony-desc">
                     The Religious Ceremony will take<br>
                     place at the Maguen David<br>
                     "SHAARE TEFILA" Abud Attie<br>
@@ -1029,8 +1058,8 @@
             </div>
 
             <div class="event-block">
-                <h2 class="event-title">Reception</h2>
-                <p class="event-description">
+                <h2 class="event-title" data-i18n="reception-title">Reception</h2>
+                <p class="event-description" data-i18n="reception-desc">
                     The Reception and Banquet will be<br>
                     held after the ceremony at<br>
                     El "Jardin de los Secretos" located<br>
@@ -1047,7 +1076,7 @@
                     <a href="https://maps.app.goo.gl/h9tR3R5GLhW4K9jj6" target="_blank" class="nav-btn">Google Maps</a>
                     <a href="https://waze.com/ul/h9g3mu5u78" target="_blank" class="nav-btn">Waze</a>
                 </div>
-                <p style="margin-top:1.5rem;font-family:'Engravers MT','Copperplate','Copperplate Gothic Light',serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#fff8ea;">Dress Code: Formal Attire</p>
+                <p style="margin-top:1.5rem;font-family:'Engravers MT','Copperplate','Copperplate Gothic Light',serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#fff8ea;" data-i18n="dress-code">Dress Code: Formal Attire</p>
             </div>
         </div>
     </section>
@@ -1058,12 +1087,12 @@
         <img src="Icons/icon-27.png" alt="" class="transport-decoration-right">
 
         <div class="transport-col">
-            <h2 class="transport-title">Transportation</h2>
-            <h3 class="transport-subtitle">Getting Around CDMX</h3>
-            <p class="transport-text">
+            <h2 class="transport-title" data-i18n="transport-title-1">Transportation</h2>
+            <h3 class="transport-subtitle" data-i18n="transport-subtitle-1">Getting Around CDMX</h3>
+            <p class="transport-text" data-i18n="transport-text-1a">
                 Ubers, DiDi and Taxi cabs are available almost always, we reccomend using the UMD App - Uber Maguen David: which is a safer option which matches you with Jewish Drivers and can be booked in advance.
             </p>
-            <p class="transport-text">
+            <p class="transport-text" data-i18n="transport-text-1b">
                 The app can be found and downloaded in the app store, or you can click the icon for a direct download link.
             </p>
             <a href="https://apps.apple.com/mx/app/umd-taxi-easy-rides-24-7/id6444706386?l=en-GB" target="_blank" class="umd-icon">
@@ -1073,27 +1102,27 @@
         </div>
 
         <div class="transport-col">
-            <h2 class="transport-title">Getting There</h2>
+            <h2 class="transport-title" data-i18n="transport-title-2">Getting There</h2>
             <h3 class="transport-subtitle">Desierto de los Leones</h3>
-            <p class="transport-text">
+            <p class="transport-text" data-i18n="transport-text-2a">
                 The Venue Location has limited reception / cellular signal, therefore there is no reception for Ubers or UMD's. We reccomend pre booking a ride back, or we will be offering tranportation from the venue to the <strong>Westin Hotel</strong> every 45 min, starting at 8:30 pm.
             </p>
-            <p class="transport-text">
+            <p class="transport-text" data-i18n="transport-text-2b">
                 Please fill out transportation necesities.
             </p>
 
             <div style="width:min(400px, 90%);align-self:center;display:flex;flex-direction:column;align-items:stretch;margin:1.5rem 0;">
                 <div class="transport-toggle">
-                    <button class="toggle-btn active" onclick="toggleTransport(this)">Will Use Transportation</button>
-                    <button class="toggle-btn" onclick="toggleTransport(this)">Will Not Use Transportation</button>
+                    <button class="toggle-btn active" data-value="Will Use Transportation" onclick="toggleTransport(this)" data-i18n="toggle-will-use">Will Use Transportation</button>
+                    <button class="toggle-btn" data-value="Will Not Use Transportation" onclick="toggleTransport(this)" data-i18n="toggle-will-not">Will Not Use Transportation</button>
                 </div>
 
                 <div id="transportGuests" style="margin-top:1rem;">
-                    <input type="text" class="transport-input" placeholder="Name">
+                    <input type="text" class="transport-input" data-i18n-placeholder="placeholder-name">
                 </div>
-                <a href="#" class="add-guest-link" style="text-align:center;margin-top:0.5rem;" onclick="addGuest('transportGuests', 'transport-input', this); return false;">+ Add Another Guest</a>
+                <a href="#" class="add-guest-link" id="addGuestTransportLink" style="text-align:center;margin-top:0.5rem;" onclick="addGuest('transportGuests', 'transport-input', this); return false;" data-i18n="add-guest-link">+ Add Another Guest</a>
             </div>
-            <button class="send-btn" onclick="submitTransport(this); return false;">Send</button>
+            <button class="send-btn" onclick="submitTransport(this); return false;" data-i18n="send-btn">Send</button>
             <p id="transportMsg" style="color:#fff8ea;font-family:'Practice',Georgia,serif;font-style:italic;font-size:0.9rem;margin-top:0.5rem;display:none;"></p>
         </div>
     </section>
@@ -1104,7 +1133,7 @@
         <div class="rsvp-pre-click" id="rsvpPreClick" onclick="showRsvpForm()">
             <div style="position: relative; display: inline-block;">
                 <img src="Icons/icon-17.png" alt="RSVP Tray" class="rsvp-tray">
-                <span class="rsvp-envelope-text">Click to RSVP</span>
+                <span class="rsvp-envelope-text" data-i18n="rsvp-click">Click to RSVP</span>
             </div>
         </div>
 
@@ -1114,50 +1143,50 @@
 
             <form class="rsvp-form" id="rsvpForm">
                 <div class="rsvp-toggle">
-                    <button type="button" class="rsvp-toggle-btn active" onclick="toggleRsvp(this)">Will Attend</button>
-                    <button type="button" class="rsvp-toggle-btn" onclick="toggleRsvp(this)">Will Not Attend</button>
+                    <button type="button" class="rsvp-toggle-btn active" data-value="Will Attend" onclick="toggleRsvp(this)" data-i18n="rsvp-will-attend">Will Attend</button>
+                    <button type="button" class="rsvp-toggle-btn" data-value="Will Not Attend" onclick="toggleRsvp(this)" data-i18n="rsvp-will-not-attend">Will Not Attend</button>
                 </div>
 
                 <div id="rsvpGuests">
-                    <input type="text" class="rsvp-input" placeholder="Name" required>
+                    <input type="text" class="rsvp-input" data-i18n-placeholder="placeholder-name" required>
                 </div>
-                <a href="#" class="add-guest-link rsvp-add-guest-link" onclick="addGuest('rsvpGuests', 'rsvp-input', this); return false;">+ Add Another Guest</a>
-                <input type="email" class="rsvp-input" placeholder="E - Mail" required>
-                <input type="tel" class="rsvp-input" placeholder="Cell - Phone (+ Country Code)">
+                <a href="#" class="add-guest-link rsvp-add-guest-link" id="addGuestRsvpLink" onclick="addGuest('rsvpGuests', 'rsvp-input', this); return false;" data-i18n="add-guest-link">+ Add Another Guest</a>
+                <input type="email" class="rsvp-input" data-i18n-placeholder="placeholder-email" placeholder="E - Mail" required>
+                <input type="tel" class="rsvp-input" data-i18n-placeholder="placeholder-phone" placeholder="Cell - Phone (+ Country Code)">
             </form>
 
-            <button type="button" class="send-btn" style="color:#a79a6a;" onclick="submitRsvp(this);">Send</button>
+            <button type="button" class="send-btn" style="color:#a79a6a;" onclick="submitRsvp(this);" data-i18n="send-btn">Send</button>
             <p id="rsvpMsg" style="color:#a79a6a;font-family:'Practice',Georgia,serif;font-style:italic;font-size:0.9rem;margin-top:0.5rem;display:none;"></p>
 
             <img src="Icons/icon-20.png" alt="Decorative Garland" class="rsvp-garland">
 
-            <p class="rsvp-deadline">Please Rsvp Before April 1st.</p>
+            <p class="rsvp-deadline" data-i18n="rsvp-deadline">Please Rsvp Before April 1st.</p>
         </div>
     </section>
 
     <!-- HOTELS -->
     <section id="hotels">
         <div class="hotels-section">
-            <h2 class="section-script-title">Hotels</h2>
+            <h2 class="section-script-title" data-i18n="hotels-title">Hotels</h2>
             <div class="hotels-grid">
                 <a href="https://app.marriott.com/reslink?id=1772819893426&key=GRP&app=resvlink" target="_blank" class="hotel-card">
                     <img src="Icons/icon-02.png" alt="Westin Santa Fe Key" class="hotel-key">
                     <h3 class="hotel-name">Westin Santa Fe</h3>
-                    <p class="hotel-desc">
+                    <p class="hotel-desc" data-i18n="hotel-desc-westin">
                         The closest hotel to the wedding venue. Click here to access a special discount rate. Book by April 21.
                     </p>
                 </a>
                 <a href="https://www.marriott.com/search/availabilityCalendar.mi?propertyCode=MEXRZ&isSearch=true&currency=&pid=&scid=&fromDate=05%2F06%2F2026&toDate=05%2F10%2F2026&clusterCode=none&flexibleDateSearch=true&program=marriott&costTab=average" target="_blank" class="hotel-card">
                     <img src="Icons/icon-01.png" alt="Ritz Carlton Key" class="hotel-key">
                     <h3 class="hotel-name">Ritz Carlton</h3>
-                    <p class="hotel-desc">
+                    <p class="hotel-desc" data-i18n="hotel-desc-ritz">
                         The best luxury hotel in Mexico City, with a great location and best view of the city.
                     </p>
                 </a>
                 <a href="https://www.itbrickhotel.com/" target="_blank" class="hotel-card">
                     <img src="Icons/icon-03.png" alt="Brick Hotel Key" class="hotel-key">
                     <h3 class="hotel-name">Brick Hotel</h3>
-                    <p class="hotel-desc">
+                    <p class="hotel-desc" data-i18n="hotel-desc-brick">
                         Great boutique hotel option in the Roma neighborhood.
                     </p>
                 </a>
@@ -1168,27 +1197,27 @@
     <!-- TO DO -->
     <section id="todo">
         <div class="todo-section" style="border-top: none;">
-            <h2 class="section-script-title">To Do</h2>
+            <h2 class="section-script-title" data-i18n="todo-title">To Do</h2>
             <div class="todo-grid">
                 <a href="restaurants.html" class="todo-category">
                     <img src="Icons/icon-07.png" alt="Restaurants" class="todo-icon">
-                    <span class="todo-label">Restaurants<br>&<br>Local Eats</span>
+                    <span class="todo-label" data-i18n="todo-restaurants">Restaurants<br>&<br>Local Eats</span>
                 </a>
                 <a href="bars.html" class="todo-category">
                     <img src="Icons/icon-08.png" alt="Bars & Drinks" class="todo-icon">
-                    <span class="todo-label">Bars<br>&<br>Drinks</span>
+                    <span class="todo-label" data-i18n="todo-bars">Bars<br>&<br>Drinks</span>
                 </a>
                 <a href="bakeries.html" class="todo-category">
                     <img src="Icons/icon-09.png" alt="Bakeries & Coffee" class="todo-icon">
-                    <span class="todo-label">Bakeries<br>&<br>Coffee</span>
+                    <span class="todo-label" data-i18n="todo-bakeries">Bakeries<br>&<br>Coffee</span>
                 </a>
                 <a href="museums.html" class="todo-category">
                     <img src="Icons/icon-10.png" alt="Museums & Stores" class="todo-icon">
-                    <span class="todo-label">Museums<br>&<br>Stores</span>
+                    <span class="todo-label" data-i18n="todo-museums">Museums<br>&<br>Stores</span>
                 </a>
                 <a href="beauty.html" class="todo-category">
                     <img src="Icons/icon-11.png" alt="Beauty & Salons" class="todo-icon">
-                    <span class="todo-label">Beauty<br>&<br>Salons</span>
+                    <span class="todo-label" data-i18n="todo-beauty">Beauty<br>&<br>Salons</span>
                 </a>
             </div>
         </div>
@@ -1198,17 +1227,17 @@
     <section id="registry">
         <img src="Icons/icon-21.png" alt="Gift" class="registry-gift">
 
-        <p class="registry-text">
+        <p class="registry-text" data-i18n="registry-text-1">
             Your presence at our wedding our greatest gift.<br>
             If you would like to contribute to the start of our<br>
             life together, we've included a few options below.
         </p>
-        <p class="registry-text">
+        <p class="registry-text" data-i18n="registry-text-2">
             As many of you will be traveling to celebrate with<br>
             us, please know gifts are completely optional.
         </p>
 
-        <h2 class="registry-title">Registry</h2>
+        <h2 class="registry-title" data-i18n="registry-title">Registry</h2>
 
         <div class="registry-links">
             <a href="https://www.elpalaciodehierro.com/buscar?eventId=405899" target="_blank" class="registry-link">Palacio de<br>Hierro</a>
@@ -1223,19 +1252,19 @@
 
                 <!-- Q1 -->
                 <div style="border-bottom:1px solid #a79a6a;padding:1.5rem 0;">
-                    <p style="font-family:'Engravers MT','Copperplate','Copperplate Gothic Light',serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#3a3226;margin:0 0 0.75rem 0;">Where is the wedding?</p>
-                    <p class="hotel-desc" style="font-size:0.9rem;color:#555;line-height:1.8;margin:0;">
+                    <p style="font-family:'Engravers MT','Copperplate','Copperplate Gothic Light',serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#3a3226;margin:0 0 0.75rem 0;" data-i18n="faq-q1">Where is the wedding?</p>
+                    <p class="hotel-desc" style="font-size:0.9rem;color:#555;line-height:1.8;margin:0;" data-i18n="faq-a1">
                         The Banquet and Reception will be held at a remote location inside "El Desierto de Los Leones." <strong>Please note that there is none to very limited cellphone service</strong> — we recommend getting there via Uber. For the return, Uber won't be available, so we will be offering transport back to the Westin Santa Fe hotel. If needed, <strong>please reserve a spot <a href="#transportation" style="color:#a79a6a;text-decoration:underline;">here</a></strong>.
                     </p>
                 </div>
 
                 <!-- Q2 -->
                 <div style="border-bottom:1px solid #a79a6a;padding:1.5rem 0;">
-                    <p style="font-family:'Engravers MT','Copperplate','Copperplate Gothic Light',serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#3a3226;margin:0 0 0.75rem 0;">What should I wear?</p>
-                    <p class="hotel-desc" style="font-size:0.9rem;color:#555;line-height:1.8;margin:0;">
+                    <p style="font-family:'Engravers MT','Copperplate','Copperplate Gothic Light',serif;font-size:0.85rem;letter-spacing:2px;text-transform:uppercase;color:#3a3226;margin:0 0 0.75rem 0;" data-i18n="faq-q2">What should I wear?</p>
+                    <p class="hotel-desc" style="font-size:0.9rem;color:#555;line-height:1.8;margin:0;" data-i18n="faq-a2-1">
                         The dress code for our wedding is formal attire. For women we recommend long or midi dresses; for men, a tux or a suit — whichever is preferred.
                     </p>
-                    <p class="hotel-desc" style="font-size:0.9rem;color:#555;line-height:1.8;margin-top:0.75rem;">
+                    <p class="hotel-desc" style="font-size:0.9rem;color:#555;line-height:1.8;margin-top:0.75rem;" data-i18n="faq-a2-2">
                         For the religious ceremony held in the synagogue, women are required to cover their shoulders. We recommend bringing a shawl, which can also be worn later in the evening in case it gets cooler at night.
                     </p>
                 </div>
@@ -1245,7 +1274,176 @@
     </section>
 
     <script>
+        // ---- Language Toggle ----
+        const translations = {
+            en: {
+                'nav-home': 'Home',
+                'nav-itinerary': 'Itinerary',
+                'nav-transport': 'Transport',
+                'nav-rsvp': 'RSVP',
+                'nav-hotels': 'Hotels',
+                'nav-todo': 'To Do',
+                'nav-registry': 'Registry',
+                'nav-faq': 'FAQ',
+
+                'ceremony-title': 'Chuppah Ceremony',
+                'ceremony-desc': 'The Religious Ceremony will take<br>place at the Maguen David<br>"SHAARE TEFILA" Abud Attie<br>Synagogue.',
+                'reception-title': 'Reception',
+                'reception-desc': 'The Reception and Banquet will be<br>held after the ceremony at<br>El "Jardin de los Secretos" located<br>at "Ex Convento Desierto de Los<br>Leones"',
+                'dress-code': 'Dress Code: Formal Attire',
+
+                'transport-title-1': 'Transportation',
+                'transport-subtitle-1': 'Getting Around CDMX',
+                'transport-text-1a': 'Ubers, DiDi and Taxi cabs are available almost always, we reccomend using the UMD App - Uber Maguen David: which is a safer option which matches you with Jewish Drivers and can be booked in advance.',
+                'transport-text-1b': 'The app can be found and downloaded in the app store, or you can click the icon for a direct download link.',
+                'transport-title-2': 'Getting There',
+                'transport-text-2a': 'The Venue Location has limited reception / cellular signal, therefore there is no reception for Ubers or UMD\'s. We reccomend pre booking a ride back, or we will be offering tranportation from the venue to the <strong>Westin Hotel</strong> every 45 min, starting at 8:30 pm.',
+                'transport-text-2b': 'Please fill out transportation necesities.',
+                'toggle-will-use': 'Will Use Transportation',
+                'toggle-will-not': 'Will Not Use Transportation',
+                'add-guest-link': '+ Add Another Guest',
+                'send-btn': 'Send',
+
+                'rsvp-click': 'Click to RSVP',
+                'rsvp-will-attend': 'Will Attend',
+                'rsvp-will-not-attend': 'Will Not Attend',
+                'rsvp-deadline': 'Please Rsvp Before April 1st.',
+
+                'registry-text-1': 'Your presence at our wedding our greatest gift.<br>If you would like to contribute to the start of our<br>life together, we\'ve included a few options below.',
+                'registry-text-2': 'As many of you will be traveling to celebrate with<br>us, please know gifts are completely optional.',
+                'registry-title': 'Registry',
+
+                'hotels-title': 'Hotels',
+                'hotel-desc-westin': 'The closest hotel to the wedding venue. Click here to access a special discount rate. Book by April 21.',
+                'hotel-desc-ritz': 'The best luxury hotel in Mexico City, with a great location and best view of the city.',
+                'hotel-desc-brick': 'Great boutique hotel option in the Roma neighborhood.',
+
+                'todo-title': 'To Do',
+                'todo-restaurants': 'Restaurants<br>&<br>Local Eats',
+                'todo-bars': 'Bars<br>&<br>Drinks',
+                'todo-bakeries': 'Bakeries<br>&<br>Coffee',
+                'todo-museums': 'Museums<br>&<br>Stores',
+                'todo-beauty': 'Beauty<br>&<br>Salons',
+
+                'faq-q1': 'Where is the wedding?',
+                'faq-a1': 'The Banquet and Reception will be held at a remote location inside "El Desierto de Los Leones." <strong>Please note that there is none to very limited cellphone service</strong> — we recommend getting there via Uber. For the return, Uber won\'t be available, so we will be offering transport back to the Westin Santa Fe hotel. If needed, <strong>please reserve a spot <a href="#transportation" style="color:#a79a6a;text-decoration:underline;">here</a></strong>.',
+                'faq-q2': 'What should I wear?',
+                'faq-a2-1': 'The dress code for our wedding is formal attire. For women we recommend long or midi dresses; for men, a tux or a suit — whichever is preferred.',
+                'faq-a2-2': 'For the religious ceremony held in the synagogue, women are required to cover their shoulders. We recommend bringing a shawl, which can also be worn later in the evening in case it gets cooler at night.',
+
+                'placeholder-name': 'Name',
+                'placeholder-guest': 'Name of Guest',
+                'placeholder-email': 'E - Mail',
+                'placeholder-phone': 'Cell - Phone (+ Country Code)',
+
+                'msg-transport-success': '✓ Received! Thank you.',
+                'msg-transport-error': 'Something went wrong. Please try again.',
+                'msg-transport-empty': 'Please enter your name.',
+                'msg-rsvp-success': '✓ RSVP received! Thank you.',
+                'msg-rsvp-error': 'Something went wrong. Please try again.',
+                'msg-rsvp-empty': 'Please fill in your name and email.',
+            },
+            es: {
+                'nav-home': 'Inicio',
+                'nav-itinerary': 'Itinerario',
+                'nav-transport': 'Transporte',
+                'nav-rsvp': 'RSVP',
+                'nav-hotels': 'Hoteles',
+                'nav-todo': 'Actividades',
+                'nav-registry': 'Regalos',
+                'nav-faq': 'FAQ',
+
+                'ceremony-title': 'Ceremonia Chuppah',
+                'ceremony-desc': 'La Ceremonia Religiosa se llevará<br>a cabo en la Sinagoga Maguen<br>David "SHAARE TEFILA"<br>Abud Attie.',
+                'reception-title': 'Recepción',
+                'reception-desc': 'La Recepción y Banquete se realizará<br>después de la ceremonia en<br>El "Jardín de los Secretos" ubicado<br>en el "Ex Convento Desierto<br>de Los Leones"',
+                'dress-code': 'Código de Vestimenta: Formal',
+
+                'transport-title-1': 'Transporte',
+                'transport-subtitle-1': 'Moviéndote por CDMX',
+                'transport-text-1a': 'Uber, DiDi y taxis están disponibles casi siempre. Recomendamos usar la App UMD - Uber Maguen David: una opción más segura que te conecta con conductores judíos y se puede reservar con anticipación.',
+                'transport-text-1b': 'La app se puede descargar en el App Store, o puedes hacer clic en el ícono para un enlace de descarga directo.',
+                'transport-title-2': 'Cómo Llegar',
+                'transport-text-2a': 'El lugar tiene señal celular limitada, por lo que no hay cobertura para Uber ni UMD. Recomendamos reservar un ride de regreso con anticipación, o ofreceremos transporte del lugar al <strong>Hotel Westin</strong> cada 45 min a partir de las 8:30 pm.',
+                'transport-text-2b': 'Por favor llena tus necesidades de transporte.',
+                'toggle-will-use': 'Usaré Transporte',
+                'toggle-will-not': 'No Usaré Transporte',
+                'add-guest-link': '+ Agregar Otro Invitado',
+                'send-btn': 'Enviar',
+
+                'rsvp-click': 'Haz clic para confirmar',
+                'rsvp-will-attend': 'Asistiré',
+                'rsvp-will-not-attend': 'No Asistiré',
+                'rsvp-deadline': 'Confirma tu asistencia antes del 1 de Abril.',
+
+                'registry-text-1': 'Tu presencia en nuestra boda es nuestro mayor regalo.<br>Si deseas contribuir al inicio de nuestra vida juntos,<br>hemos incluido algunas opciones a continuación.',
+                'registry-text-2': 'Como muchos de ustedes viajarán para celebrar con nosotros,<br>sepan que los regalos son completamente opcionales.',
+                'registry-title': 'Mesa de Regalos',
+
+                'hotels-title': 'Hoteles',
+                'hotel-desc-westin': 'El hotel más cercano al lugar de la boda. Haz clic aquí para acceder a una tarifa especial con descuento. Reserva antes del 21 de abril.',
+                'hotel-desc-ritz': 'El mejor hotel de lujo en Ciudad de México, con una excelente ubicación y la mejor vista de la ciudad.',
+                'hotel-desc-brick': 'Excelente opción de hotel boutique en la colonia Roma.',
+
+                'todo-title': 'Actividades',
+                'todo-restaurants': 'Restaurantes<br>&<br>Comida Local',
+                'todo-bars': 'Bares<br>&<br>Bebidas',
+                'todo-bakeries': 'Panaderías<br>&<br>Café',
+                'todo-museums': 'Museos<br>&<br>Tiendas',
+                'todo-beauty': 'Belleza<br>&<br>Salones',
+
+                'faq-q1': '¿Dónde es la boda?',
+                'faq-a1': 'El Banquete y Recepción se llevará a cabo en un lugar remoto dentro del "Desierto de Los Leones." <strong>Ten en cuenta que no hay señal o la señal celular es muy limitada</strong> — recomendamos llegar en Uber. Para el regreso, Uber no estará disponible, por lo que ofreceremos transporte de regreso al hotel Westin Santa Fe. Si lo necesitas, <strong>por favor reserva un lugar <a href="#transportation" style="color:#a79a6a;text-decoration:underline;">aquí</a></strong>.',
+                'faq-q2': '¿Qué debo usar?',
+                'faq-a2-1': 'El código de vestimenta de nuestra boda es formal. Para mujeres recomendamos vestidos largos o midi; para hombres, esmoquin o traje, según se prefiera.',
+                'faq-a2-2': 'Para la ceremonia religiosa en la sinagoga, se solicita a las mujeres cubrir sus hombros. Recomendamos traer un chal, que también puede usarse más tarde en la noche si refresca.',
+
+                'placeholder-name': 'Nombre',
+                'placeholder-guest': 'Nombre del Invitado',
+                'placeholder-email': 'E - Mail',
+                'placeholder-phone': 'Celular (+ Código de País)',
+
+                'msg-transport-success': '✓ Recibido. ¡Gracias!',
+                'msg-transport-error': 'Algo salió mal. Por favor intenta de nuevo.',
+                'msg-transport-empty': 'Por favor ingresa tu nombre.',
+                'msg-rsvp-success': '✓ RSVP recibido. ¡Gracias!',
+                'msg-rsvp-error': 'Algo salió mal. Por favor intenta de nuevo.',
+                'msg-rsvp-empty': 'Por favor ingresa tu nombre y correo.',
+            }
+        };
+
+        let currentLang = 'en';
+
+        window.toggleLang = function() {
+            currentLang = currentLang === 'en' ? 'es' : 'en';
+            document.getElementById('langBtn').textContent = currentLang === 'en' ? 'ES' : 'EN';
+            applyTranslations();
+        };
+
+        function applyTranslations() {
+            document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key] !== undefined) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n-placeholder');
+                if (translations[currentLang][key] !== undefined) {
+                    el.placeholder = translations[currentLang][key];
+                }
+            });
+        }
+
+        function t(key) {
+            return translations[currentLang][key] || translations['en'][key] || key;
+        }
+        // ---- End Language Toggle ----
+
         document.addEventListener('DOMContentLoaded', function() {
+            // Set initial placeholders
+            applyTranslations();
+
             const navbar = document.getElementById('navbar');
             const homeSection = document.getElementById('home');
             const navMenu = document.getElementById('navMenu');
@@ -1257,7 +1455,6 @@
                 window.addEventListener('scroll', () => {
                     const scrollPos = window.scrollY + 100;
 
-                    // Check which section we're in
                     let inDarkSection = false;
                     sections.forEach(section => {
                         const id = section.id;
@@ -1265,7 +1462,6 @@
                         const bottom = top + section.offsetHeight;
 
                         if (scrollPos >= top && scrollPos < bottom) {
-                            // Dark nav for light backgrounds
                             if (id === 'rsvp' || id === 'registry' || id === 'hotels' || id === 'todo' || id === 'faq') {
                                 inDarkSection = true;
                             }
@@ -1280,7 +1476,6 @@
                 });
             }
 
-            // Toggle menu function
             window.toggleMenu = function() {
                 if (navMenu) {
                     navMenu.classList.toggle('active');
@@ -1314,7 +1509,7 @@
                 const input = document.createElement('input');
                 input.type = 'text';
                 input.className = inputClass;
-                input.placeholder = 'Name of Guest';
+                input.placeholder = t('placeholder-guest');
                 input.style.marginTop = '0.75rem';
                 container.appendChild(input);
                 input.focus();
@@ -1325,13 +1520,13 @@
             const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJAS1bttADB2ZiMnJG142iBVR0V2v0pIbFpu7RdyvbnrPURpvHJqXzKZzDykJh7gX0jw/exec';
 
             window.submitTransport = function(btn) {
-                const choice = document.querySelector('.toggle-btn.active')?.textContent?.trim() || '';
+                const choice = document.querySelector('.toggle-btn.active')?.getAttribute('data-value') || '';
                 const inputs = document.querySelectorAll('#transportGuests input');
                 const name = inputs[0]?.value?.trim() || '';
                 const guestName = inputs[1]?.value?.trim() || '';
                 const msg = document.getElementById('transportMsg');
 
-                if (!name) { msg.textContent = 'Please enter your name.'; msg.style.display = 'block'; return; }
+                if (!name) { msg.textContent = t('msg-transport-empty'); msg.style.display = 'block'; return; }
 
                 btn.disabled = true;
                 btn.style.opacity = '0.5';
@@ -1339,12 +1534,12 @@
                     method: 'POST',
                     body: JSON.stringify({ formType: 'transportation', transportChoice: choice, name, guestName })
                 })
-                .then(() => { msg.textContent = '✓ Received! Thank you.'; msg.style.display = 'block'; })
-                .catch(() => { msg.textContent = 'Something went wrong. Please try again.'; msg.style.display = 'block'; btn.disabled = false; btn.style.opacity = '1'; });
+                .then(() => { msg.textContent = t('msg-transport-success'); msg.style.display = 'block'; })
+                .catch(() => { msg.textContent = t('msg-transport-error'); msg.style.display = 'block'; btn.disabled = false; btn.style.opacity = '1'; });
             };
 
             window.submitRsvp = function(btn) {
-                const attendance = document.querySelector('.rsvp-toggle-btn.active')?.textContent?.trim() || '';
+                const attendance = document.querySelector('.rsvp-toggle-btn.active')?.getAttribute('data-value') || '';
                 const rsvpInputs = document.querySelectorAll('#rsvpGuests input');
                 const name = rsvpInputs[0]?.value?.trim() || '';
                 const guestName = rsvpInputs[1]?.value?.trim() || '';
@@ -1354,7 +1549,7 @@
                 const phone = phoneEl?.value?.trim() || '';
                 const msg = document.getElementById('rsvpMsg');
 
-                if (!name || !email) { msg.textContent = 'Please fill in your name and email.'; msg.style.display = 'block'; return; }
+                if (!name || !email) { msg.textContent = t('msg-rsvp-empty'); msg.style.display = 'block'; return; }
 
                 btn.disabled = true;
                 btn.style.opacity = '0.5';
@@ -1362,8 +1557,8 @@
                     method: 'POST',
                     body: JSON.stringify({ formType: 'rsvp', attendance, name, guestName, email, phone })
                 })
-                .then(() => { msg.textContent = '✓ RSVP received! Thank you.'; msg.style.display = 'block'; })
-                .catch(() => { msg.textContent = 'Something went wrong. Please try again.'; msg.style.display = 'block'; btn.disabled = false; btn.style.opacity = '1'; });
+                .then(() => { msg.textContent = t('msg-rsvp-success'); msg.style.display = 'block'; })
+                .catch(() => { msg.textContent = t('msg-rsvp-error'); msg.style.display = 'block'; btn.disabled = false; btn.style.opacity = '1'; });
             };
             // ---- End Google Sheets integration ----
 
