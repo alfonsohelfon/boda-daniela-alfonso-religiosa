@@ -90,29 +90,92 @@
         .nav-back:hover { opacity: 0.6; }
 
         .page-content {
-            padding: 8rem 2rem 4rem 2rem;
+            padding: 8rem 2rem 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
         }
+
         .section-script-title {
             font-family: 'Bellissima Script', cursive;
             font-size: 4rem;
             color: #a79a6a;
             margin-bottom: 3rem;
+            text-align: center;
         }
-        .coming-soon {
+
+        /* Category label (Bakeries / Coffee + Tea) */
+        .category-label {
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 0.8rem;
+            color: #a79a6a;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ece0be;
+            text-align: center;
+        }
+
+        /* Grid of neighborhood columns */
+        .places-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 5rem;
+        }
+        .places-column {
+            flex: 1;
+            min-width: 200px;
+            max-width: 320px;
+        }
+        .area-title {
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 0.85rem;
+            color: #a79a6a;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ece0be;
+        }
+
+        .place-item {
+            padding: 0.6rem 0;
+        }
+        .place-item a {
+            display: block;
+            font-family: 'Engravers MT', 'Copperplate', 'Copperplate Gothic Light', serif;
+            font-size: 0.82rem;
+            color: #232618;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .place-item a:hover { opacity: 0.55; }
+        .place-note {
             font-family: 'Practice', Georgia, serif;
             font-style: italic;
-            font-size: 1.1rem;
-            color: #666;
-            margin-top: 2rem;
+            font-size: 0.78rem;
+            color: #888;
+            line-height: 1.5;
+            margin-top: 0.3rem;
+        }
+
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: #ece0be;
+            margin: 0;
         }
 
         @media (max-width: 900px) {
             .nav-title { font-size: 1.8rem; }
             .nav-back { font-size: 0.85rem; }
             .section-script-title { font-size: 2.8rem; }
+            .places-grid { flex-direction: column; align-items: center; }
+            .places-column { max-width: 100%; width: 100%; }
         }
         @media (max-width: 600px) {
             .section-script-title { font-size: 2.2rem; }
@@ -124,14 +187,106 @@
 
     <nav>
         <div class="nav-container">
-            <a href="index.html#todo-tostay" class="nav-back">&larr; Back</a>
+            <a href="index.html#todo" class="nav-back">&larr; Back</a>
             <span class="nav-title">Bakeries & Coffee</span>
         </div>
     </nav>
 
     <div class="page-content">
         <h1 class="section-script-title">Bakeries & Coffee</h1>
-        <p class="coming-soon">Coming soon</p>
+
+        <!-- BAKERIES -->
+        <p class="category-label">Bakeries</p>
+        <div class="places-grid">
+
+            <div class="places-column">
+                <h3 class="area-title">Condesa / Hipódromo</h3>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Saint+Panaderia+Benjamin+Hill+146+Condesa+Mexico+City" target="_blank" rel="noopener">Saint</a>
+                    <p class="place-note">Everything is good, but try the baguette, crème brûlée doughnut, and on weekends their chocolate sourdough.</p>
+                </div>
+                <div class="section-divider"></div>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Odette+Panaderia+Popocatepetl+35+Hipodromo+Mexico+City" target="_blank" rel="noopener">Odette</a>
+                </div>
+            </div>
+
+            <div class="places-column">
+                <h3 class="area-title">Roma Norte</h3>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Green+Rhino+Tonala+121+Roma+Norte+Mexico+City" target="_blank" rel="noopener">Green Rhino</a>
+                    <p class="place-note">Can't go wrong with anything, but favorites are the classic sourdough, kimcheese sandwich, and the citrus croissant roll.</p>
+                </div>
+                <div class="section-divider"></div>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Panaderia+Rosetta+Colima+179+Roma+Norte+Mexico+City" target="_blank" rel="noopener">Panadería Rosetta</a>
+                </div>
+                <div class="section-divider"></div>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Marcel+Panaderia+Jalapa+130+Roma+Norte+Mexico+City" target="_blank" rel="noopener">Marcel</a>
+                </div>
+            </div>
+
+            <div class="places-column">
+                <h3 class="area-title">Polanco</h3>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Caffe+Biscottino+Luis+G+Urbina+4+Polanco+Mexico+City" target="_blank" rel="noopener">Biscottino</a>
+                    <p class="place-note">Try the guava pastry and the blue corn scone.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COFFEE + TEA -->
+        <p class="category-label">Coffee + Tea</p>
+        <div class="places-grid">
+
+            <div class="places-column">
+                <h3 class="area-title">Roma Norte</h3>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=SAN+Matcha+Jalapa+Roma+Norte+Mexico+City" target="_blank" rel="noopener">SAN Matcha</a>
+                </div>
+                <div class="section-divider"></div>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Cafe+Tormenta+Puebla+90+Roma+Norte+Mexico+City" target="_blank" rel="noopener">Café Tormenta</a>
+                </div>
+                <div class="section-divider"></div>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Cafe+Trucha+Plaza+Rio+de+Janeiro+53+Roma+Norte+Mexico+City" target="_blank" rel="noopener">Café Trucha</a>
+                </div>
+                <div class="section-divider"></div>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Crissis+cafe+Mexico+City" target="_blank" rel="noopener">Crissis</a>
+                </div>
+            </div>
+
+            <div class="places-column">
+                <h3 class="area-title">Polanco / Lomas</h3>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=City+Market+Cafe+Galileo+38+Polanco+Mexico+City" target="_blank" rel="noopener">City Market</a>
+                </div>
+                <div class="section-divider"></div>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Matre+panaderia+cafe+Monte+Ararat+220+Lomas+de+Chapultepec+Mexico+City" target="_blank" rel="noopener">MÄTRE</a>
+                </div>
+            </div>
+
+            <div class="places-column">
+                <h3 class="area-title">Juárez</h3>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=SEDE+Cafe+Praga+30+Juarez+Mexico+City" target="_blank" rel="noopener">SEDE Café</a>
+                </div>
+                <div class="section-divider"></div>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Paper+Cup+cafe+Mexico+City" target="_blank" rel="noopener">Paper Cup</a>
+                </div>
+                <div class="section-divider"></div>
+                <div class="place-item">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Pausa+Cafe+Mexico+City" target="_blank" rel="noopener">Pausa</a>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 </body>
