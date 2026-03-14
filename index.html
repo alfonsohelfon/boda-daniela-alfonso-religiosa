@@ -945,10 +945,18 @@
             }
             .hamburger {
                 display: block;
-                margin-left: auto;
+                /* no margin-left: auto — lang selector takes that role */
             }
+            /* On mobile: lang selector + hamburger sit together at the right */
             .lang-selector {
-                right: 4rem;
+                position: static;
+                transform: none;
+                margin-left: auto;
+                margin-right: 1rem;
+            }
+            .lang-dropdown {
+                right: 0;
+                left: auto;
             }
             .nav-links-wrapper {
                 position: absolute;
@@ -1078,11 +1086,6 @@
     <!-- NAVIGATION -->
     <nav id="navbar">
         <div class="nav-container">
-            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <div class="nav-links-wrapper" id="navMenu">
                 <a href="#home" class="nav-link" onclick="closeMenu()" data-i18n="nav-home">Home</a>
                 <a href="#itinerary" class="nav-link" onclick="closeMenu()" data-i18n="nav-itinerary">Itinerary</a>
@@ -1093,6 +1096,11 @@
                 <a href="#registry" class="nav-link" onclick="closeMenu()" data-i18n="nav-registry">Registry</a>
                 <a href="#faq" class="nav-link" onclick="closeMenu()" data-i18n="nav-faq">FAQ</a>
             </div>
+            <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="lang-selector" id="langSelector">
                 <button class="lang-btn" onclick="toggleLangDropdown(event)" id="langBtn" aria-label="Language">
                     <!-- Globe icon (W3C standard pattern) -->
