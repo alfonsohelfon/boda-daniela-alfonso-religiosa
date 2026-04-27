@@ -461,267 +461,7 @@
             font-weight: bold;
         }
 
-        /* Transportation Toggle */
-        .transport-toggle {
-            display: flex;
-            border: 1px solid #fff8ea;
-            border-radius: 30px;
-            overflow: hidden;
-            width: 100%;
-        }
 
-        .toggle-btn {
-            flex: 1 1 0;
-            width: 50%;
-            padding: 12px 8px;
-            background: transparent;
-            border: none;
-            color: #fff8ea;
-            font-family: 'Practice', Georgia, serif;
-            font-style: italic;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .toggle-btn.active {
-            background: #a79a6a;
-            color: #fff8ea;
-        }
-
-        .transport-input {
-            width: 100%;
-            max-width: 300px;
-            padding: 12px 20px;
-            background: transparent;
-            border: 1px solid #fff8ea;
-            border-radius: 30px;
-            color: #fff8ea;
-            font-family: 'Practice', Georgia, serif;
-            font-style: italic;
-            font-size: 0.9rem;
-            outline: none;
-            margin-bottom: 1rem;
-        }
-
-        .transport-input::placeholder {
-            color: #fff8ea;
-            opacity: 0.7;
-        }
-
-        #rsvpGuests {
-            width: 100%;
-            max-width: 400px;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        #transportGuests {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-        }
-
-        #transportGuests .transport-input {
-            max-width: none;
-            width: 100%;
-        }
-
-        .add-guest-link {
-            color: #fff8ea;
-            font-family: 'Practice', Georgia, serif;
-            font-style: italic;
-            font-size: 0.85rem;
-            text-decoration: none;
-            margin-bottom: 2rem;
-            cursor: pointer;
-        }
-
-        .add-guest-link:hover {
-            text-decoration: underline;
-        }
-
-        .rsvp-add-guest-link {
-            color: #a79a6a;
-            margin-bottom: 0.5rem;
-        }
-
-        .send-btn {
-            font-family: 'Bellissima Script', cursive;
-            font-size: 2.5rem;
-            color: #fff8ea;
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-            display: block;
-            margin: 2rem auto 0 auto;
-            text-align: center;
-        }
-
-        .send-btn:hover {
-            opacity: 0.7;
-        }
-
-        .rsvp-garland {
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* --- 7. SECTION: RSVP --- */
-        #rsvp {
-            min-height: 100vh;
-            width: 100%;
-            background-color: #fff8ea;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 6rem 2rem;
-        }
-
-        /* RSVP Pre-Click State */
-        .rsvp-pre-click {
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .rsvp-pre-click:hover {
-            transform: scale(1.02);
-        }
-
-        .rsvp-tray {
-            max-width: 600px;
-            width: 100%;
-            height: auto;
-            position: relative;
-        }
-
-        .rsvp-envelope-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: 'Engravers MT', 'Copperplate', serif;
-            font-size: 0.9rem;
-            color: #666;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-
-        /* RSVP Post-Click State */
-        .rsvp-post-click {
-            display: none;
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-        }
-
-        .rsvp-post-click.active {
-            display: block;
-        }
-
-        .rsvp-pre-click.hidden {
-            display: none;
-        }
-
-        .rsvp-ribbon {
-            width: 100%;
-            max-width: 700px;
-            height: auto;
-            margin-bottom: 2rem;
-        }
-
-        .rsvp-monogram {
-            width: 150px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-
-        .rsvp-title {
-            font-family: 'Engravers MT', 'Copperplate', serif;
-            font-size: 1.5rem;
-            color: #a79a6a;
-            letter-spacing: 5px;
-            margin-bottom: 2rem;
-        }
-
-        .rsvp-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            width: 100%;
-        }
-
-        .rsvp-toggle {
-            display: flex;
-            border: 1px solid #a79a6a;
-            border-radius: 30px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .rsvp-toggle-btn {
-            flex: 1;
-            padding: 15px 20px;
-            background: transparent;
-            border: none;
-            color: #a79a6a;
-            font-family: 'Practice', Georgia, serif;
-            font-style: italic;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .rsvp-toggle-btn.active {
-            background: #a79a6a;
-            color: #fff8ea;
-        }
-
-        .rsvp-input {
-            width: 100%;
-            max-width: 400px;
-            padding: 15px 25px;
-            background: transparent;
-            border: 1px solid #a79a6a;
-            border-radius: 30px;
-            color: #a79a6a;
-            font-family: 'Practice', Georgia, serif;
-            font-style: italic;
-            font-size: 1rem;
-            outline: none;
-        }
-
-        .rsvp-input::placeholder {
-            color: #a79a6a;
-            opacity: 0.7;
-        }
-
-        .rsvp-garland {
-            width: 200px;
-            height: auto;
-            display: block;
-            margin: 2rem auto;
-        }
-
-        .rsvp-deadline {
-            font-family: 'Bellissima Script', cursive;
-            font-size: 2.5rem;
-            color: #a79a6a;
-            margin-top: 2rem;
-        }
 
         /* --- 8. SECTION: REGISTRY --- */
         #registry {
@@ -1043,13 +783,6 @@
                 font-size: 2.5rem;
             }
 
-            .rsvp-ribbon {
-                max-width: 100%;
-            }
-            .rsvp-deadline {
-                font-size: 1.8rem;
-            }
-
             .hotels-grid {
                 flex-direction: column;
                 align-items: center;
@@ -1089,9 +822,6 @@
             .section-script-title {
                 font-size: 2.8rem;
             }
-            .rsvp-monogram {
-                width: 100px;
-            }
         }
     </style>
 </head>
@@ -1104,7 +834,6 @@
                 <a href="#home" class="nav-link" onclick="closeMenu()" data-i18n="nav-home">Home</a>
                 <a href="#itinerary" class="nav-link" onclick="closeMenu()" data-i18n="nav-itinerary">Itinerary</a>
                 <a href="#transportation" class="nav-link" onclick="closeMenu()" data-i18n="nav-transport">Transport</a>
-                <a href="#rsvp" class="nav-link" onclick="closeMenu()" data-i18n="nav-rsvp">RSVP</a>
                 <a href="#hotels" class="nav-link" onclick="closeMenu()" data-i18n="nav-hotels">Hotels</a>
                 <a href="#todo" class="nav-link" onclick="closeMenu()" data-i18n="nav-todo">To Do</a>
                 <a href="#registry" class="nav-link" onclick="closeMenu()" data-i18n="nav-registry">Registry</a>
@@ -1212,68 +941,8 @@
             </a>
         </div>
 
-        <div class="transport-col">
-            <h2 class="transport-title" data-i18n="transport-title-2">Getting There</h2>
-            <h3 class="transport-subtitle">Desierto de los Leones</h3>
-            <p class="transport-text" data-i18n="transport-text-2a">
-                The Venue Location has limited reception / cellular signal, therefore there is no reception for Ubers or UMD's. We reccomend pre booking a ride back, or we will be offering tranportation from the venue to the <strong>Westin Hotel</strong> every 45 min, starting at 8:30 pm.
-            </p>
-            <p class="transport-text" data-i18n="transport-text-2b">
-                Please fill out transportation necesities.
-            </p>
-
-            <div style="width:min(400px, 90%);align-self:center;display:flex;flex-direction:column;align-items:stretch;margin:1.5rem 0;">
-                <div class="transport-toggle">
-                    <button class="toggle-btn active" data-value="Will Use Transportation" onclick="toggleTransport(this)" data-i18n="toggle-will-use">Will Use Transportation</button>
-                    <button class="toggle-btn" data-value="Will Not Use Transportation" onclick="toggleTransport(this)" data-i18n="toggle-will-not">Will Not Use Transportation</button>
-                </div>
-
-                <div id="transportGuests" style="margin-top:1rem;">
-                    <input type="text" class="transport-input" data-i18n-placeholder="placeholder-name">
-                </div>
-                <a href="#" class="add-guest-link" id="addGuestTransportLink" style="text-align:center;margin-top:0.5rem;" onclick="addGuest('transportGuests', 'transport-input', this); return false;" data-i18n="add-guest-link">+ Add Another Guest</a>
-            </div>
-            <button class="send-btn" onclick="submitTransport(this); return false;" data-i18n="send-btn">Send</button>
-            <p id="transportMsg" style="color:#fff8ea;font-family:'Practice',Georgia,serif;font-style:italic;font-size:0.9rem;margin-top:0.5rem;display:none;"></p>
-        </div>
     </section>
 
-    <!-- RSVP -->
-    <section id="rsvp">
-        <!-- Pre-Click State -->
-        <div class="rsvp-pre-click" id="rsvpPreClick" onclick="showRsvpForm()">
-            <div style="position: relative; display: inline-block;">
-                <img src="Icons/icon-17.png" alt="RSVP Tray" class="rsvp-tray">
-                <span class="rsvp-envelope-text" data-i18n="rsvp-click">Click to RSVP</span>
-            </div>
-        </div>
-
-        <!-- Post-Click State -->
-        <div class="rsvp-post-click" id="rsvpPostClick">
-            <img src="Icons/icon-19.png" alt="Decorative Ribbon" class="rsvp-ribbon">
-
-            <form class="rsvp-form" id="rsvpForm">
-                <div class="rsvp-toggle">
-                    <button type="button" class="rsvp-toggle-btn active" data-value="Will Attend" onclick="toggleRsvp(this)" data-i18n="rsvp-will-attend">Will Attend</button>
-                    <button type="button" class="rsvp-toggle-btn" data-value="Will Not Attend" onclick="toggleRsvp(this)" data-i18n="rsvp-will-not-attend">Will Not Attend</button>
-                </div>
-
-                <div id="rsvpGuests">
-                    <input type="text" class="rsvp-input" data-i18n-placeholder="placeholder-name" required>
-                </div>
-                <a href="#" class="add-guest-link rsvp-add-guest-link" id="addGuestRsvpLink" onclick="addGuest('rsvpGuests', 'rsvp-input', this); return false;" data-i18n="add-guest-link">+ Add Another Guest</a>
-                <input type="email" class="rsvp-input" data-i18n-placeholder="placeholder-email" placeholder="E - Mail" required>
-                <input type="tel" class="rsvp-input" data-i18n-placeholder="placeholder-phone" placeholder="Cell - Phone (+ Country Code)">
-            </form>
-
-            <button type="button" class="send-btn" style="color:#a79a6a;" onclick="submitRsvp(this);" data-i18n="send-btn">Send</button>
-            <p id="rsvpMsg" style="color:#a79a6a;font-family:'Practice',Georgia,serif;font-style:italic;font-size:0.9rem;margin-top:0.5rem;display:none;"></p>
-
-            <img src="Icons/icon-20.png" alt="Decorative Garland" class="rsvp-garland">
-
-            <p class="rsvp-deadline" data-i18n="rsvp-deadline">Please Rsvp Before April 1st.</p>
-        </div>
-    </section>
 
     <!-- HOTELS -->
     <section id="hotels">
@@ -1391,7 +1060,6 @@
                 'nav-home': 'Home',
                 'nav-itinerary': 'Itinerary',
                 'nav-transport': 'Transport',
-                'nav-rsvp': 'RSVP',
                 'nav-hotels': 'Hotels',
                 'nav-todo': 'To Do',
                 'nav-registry': 'Registry',
@@ -1408,19 +1076,6 @@
                 'transport-subtitle-1': 'Getting Around CDMX',
                 'transport-text-1a': 'Ubers, DiDi and Taxi cabs are available almost always, we reccomend using the UMD App - Uber Maguen David: which is a safer option which matches you with Jewish Drivers and can be booked in advance.',
                 'transport-text-1b': 'The app can be found and downloaded in the app store, or you can click the icon for a direct download link.',
-                'transport-title-2': 'Getting There',
-                'transport-text-2a': 'The Venue Location has limited reception / cellular signal, therefore there is no reception for Ubers or UMD\'s. We reccomend pre booking a ride back, or we will be offering tranportation from the venue to the <strong>Westin Hotel</strong> every 45 min, starting at 8:30 pm.',
-                'transport-text-2b': 'Please fill out transportation necesities.',
-                'toggle-will-use': 'Will Use Transportation',
-                'toggle-will-not': 'Will Not Use Transportation',
-                'add-guest-link': '+ Add Another Guest',
-                'send-btn': 'Send',
-
-                'rsvp-click': 'Click to RSVP',
-                'rsvp-will-attend': 'Will Attend',
-                'rsvp-will-not-attend': 'Will Not Attend',
-                'rsvp-deadline': 'Please Rsvp Before April 1st.',
-
                 'registry-text-1': 'Your presence at our wedding our greatest gift.<br>If you would like to contribute to the start of our<br>life together, we\'ve included a few options below.',
                 'registry-text-2': 'As many of you will be traveling to celebrate with<br>us, please know gifts are completely optional.',
                 'registry-title': 'Registry',
@@ -1443,23 +1098,11 @@
                 'faq-a2-1': 'The dress code for our wedding is formal attire. For women we recommend long or midi dresses; for men, a tux or a suit — whichever is preferred.',
                 'faq-a2-2': 'For the religious ceremony held in the synagogue, women are required to cover their shoulders. We recommend bringing a shawl, which can also be worn later in the evening in case it gets cooler at night.',
 
-                'placeholder-name': 'Name',
-                'placeholder-guest': 'Name of Guest',
-                'placeholder-email': 'E - Mail',
-                'placeholder-phone': 'Cell - Phone (+ Country Code)',
-
-                'msg-transport-success': '✓ Received! Thank you.',
-                'msg-transport-error': 'Something went wrong. Please try again.',
-                'msg-transport-empty': 'Please enter your name.',
-                'msg-rsvp-success': '✓ RSVP received! Thank you.',
-                'msg-rsvp-error': 'Something went wrong. Please try again.',
-                'msg-rsvp-empty': 'Please fill in your name and email.',
             },
             es: {
                 'nav-home': 'Inicio',
                 'nav-itinerary': 'Itinerario',
                 'nav-transport': 'Transporte',
-                'nav-rsvp': 'RSVP',
                 'nav-hotels': 'Hoteles',
                 'nav-todo': 'Actividades',
                 'nav-registry': 'Regalos',
@@ -1476,19 +1119,6 @@
                 'transport-subtitle-1': 'Moviéndote por CDMX',
                 'transport-text-1a': 'Uber, DiDi y taxis están disponibles casi siempre. Recomendamos usar la App UMD - Uber Maguen David: una opción más segura que te conecta con conductores judíos y se puede reservar con anticipación.',
                 'transport-text-1b': 'La app se puede descargar en el App Store, o puedes hacer clic en el ícono para un enlace de descarga directo.',
-                'transport-title-2': 'Cómo Llegar',
-                'transport-text-2a': 'El lugar tiene señal celular limitada, por lo que no hay cobertura para Uber ni UMD. Recomendamos reservar un ride de regreso con anticipación, o ofreceremos transporte del lugar al <strong>Hotel Westin</strong> cada 45 min a partir de las 8:30 pm.',
-                'transport-text-2b': 'Por favor llena tus necesidades de transporte.',
-                'toggle-will-use': 'Usaré Transporte',
-                'toggle-will-not': 'No Usaré Transporte',
-                'add-guest-link': '+ Agregar Otro Invitado',
-                'send-btn': 'Enviar',
-
-                'rsvp-click': 'Click para confirmar',
-                'rsvp-will-attend': 'Asistiré',
-                'rsvp-will-not-attend': 'No Asistiré',
-                'rsvp-deadline': 'Confirma tu asistencia antes del 1 de Abril.',
-
                 'registry-text-1': 'Tu presencia en nuestra boda es nuestro mayor regalo. Si deseas contribuir al inicio de nuestra vida juntos, hemos incluido algunas opciones a continuación.',
                 'registry-text-2': 'Como muchos de ustedes viajarán para celebrar con nosotros, sepan que los regalos son completamente opcionales.',
                 'registry-title': 'Mesa de Regalos',
@@ -1511,17 +1141,6 @@
                 'faq-a2-1': 'El código de vestimenta de nuestra boda es formal. Para mujeres recomendamos vestidos largos o midi; para hombres, esmoquin o traje, según se prefiera.',
                 'faq-a2-2': 'Para la ceremonia religiosa en la sinagoga, se solicita a las mujeres cubrir sus hombros. Recomendamos traer un chal, que también puede usarse más tarde en la noche si refresca.',
 
-                'placeholder-name': 'Nombre',
-                'placeholder-guest': 'Nombre del Invitado',
-                'placeholder-email': 'E - Mail',
-                'placeholder-phone': 'Celular (+ Código de País)',
-
-                'msg-transport-success': '✓ Recibido. ¡Gracias!',
-                'msg-transport-error': 'Algo salió mal. Por favor intenta de nuevo.',
-                'msg-transport-empty': 'Por favor ingresa tu nombre.',
-                'msg-rsvp-success': '✓ RSVP recibido. ¡Gracias!',
-                'msg-rsvp-error': 'Algo salió mal. Por favor intenta de nuevo.',
-                'msg-rsvp-empty': 'Por favor ingresa tu nombre y correo.',
             }
         };
 
@@ -1588,7 +1207,7 @@
                         const bottom = top + section.offsetHeight;
 
                         if (scrollPos >= top && scrollPos < bottom) {
-                            if (id === 'rsvp' || id === 'registry' || id === 'hotels' || id === 'todo' || id === 'faq') {
+                            if (id === 'registry' || id === 'hotels' || id === 'todo' || id === 'faq') {
                                 inDarkSection = true;
                             }
                         }
@@ -1614,89 +1233,7 @@
                 }
             };
 
-            // Transportation toggle
-            window.toggleTransport = function(btn) {
-                const siblings = btn.parentElement.querySelectorAll('.toggle-btn');
-                siblings.forEach(s => s.classList.remove('active'));
-                btn.classList.add('active');
-            };
 
-            // RSVP toggle
-            window.toggleRsvp = function(btn) {
-                const siblings = btn.parentElement.querySelectorAll('.rsvp-toggle-btn');
-                siblings.forEach(s => s.classList.remove('active'));
-                btn.classList.add('active');
-            };
-
-            // Add guest input (max 1 additional)
-            window.addGuest = function(containerId, inputClass, linkEl) {
-                const container = document.getElementById(containerId);
-                if (container.querySelectorAll('input').length >= 2) return;
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.className = inputClass;
-                input.placeholder = t('placeholder-guest');
-                input.style.marginTop = '0.75rem';
-                container.appendChild(input);
-                input.focus();
-                if (linkEl) linkEl.style.display = 'none';
-            };
-
-            // ---- Google Sheets integration ----
-            const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzJAS1bttADB2ZiMnJG142iBVR0V2v0pIbFpu7RdyvbnrPURpvHJqXzKZzDykJh7gX0jw/exec';
-
-            window.submitTransport = function(btn) {
-                const choice = document.querySelector('.toggle-btn.active')?.getAttribute('data-value') || '';
-                const inputs = document.querySelectorAll('#transportGuests input');
-                const name = inputs[0]?.value?.trim() || '';
-                const guestName = inputs[1]?.value?.trim() || '';
-                const msg = document.getElementById('transportMsg');
-
-                if (!name) { msg.textContent = t('msg-transport-empty'); msg.style.display = 'block'; return; }
-
-                btn.disabled = true;
-                btn.style.opacity = '0.5';
-                fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ formType: 'transportation', transportChoice: choice, name, guestName })
-                })
-                .then(() => { msg.textContent = t('msg-transport-success'); msg.style.display = 'block'; })
-                .catch(() => { msg.textContent = t('msg-transport-error'); msg.style.display = 'block'; btn.disabled = false; btn.style.opacity = '1'; });
-            };
-
-            window.submitRsvp = function(btn) {
-                const attendance = document.querySelector('.rsvp-toggle-btn.active')?.getAttribute('data-value') || '';
-                const rsvpInputs = document.querySelectorAll('#rsvpGuests input');
-                const name = rsvpInputs[0]?.value?.trim() || '';
-                const guestName = rsvpInputs[1]?.value?.trim() || '';
-                const emailEl = document.querySelector('#rsvpForm input[type="email"]');
-                const phoneEl = document.querySelector('#rsvpForm input[type="tel"]');
-                const email = emailEl?.value?.trim() || '';
-                const phone = phoneEl?.value?.trim() || '';
-                const msg = document.getElementById('rsvpMsg');
-
-                if (!name || !email) { msg.textContent = t('msg-rsvp-empty'); msg.style.display = 'block'; return; }
-
-                btn.disabled = true;
-                btn.style.opacity = '0.5';
-                fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    body: JSON.stringify({ formType: 'rsvp', attendance, name, guestName, email, phone })
-                })
-                .then(() => { msg.textContent = t('msg-rsvp-success'); msg.style.display = 'block'; })
-                .catch(() => { msg.textContent = t('msg-rsvp-error'); msg.style.display = 'block'; btn.disabled = false; btn.style.opacity = '1'; });
-            };
-            // ---- End Google Sheets integration ----
-
-            // Show RSVP form
-            window.showRsvpForm = function() {
-                const preClick = document.getElementById('rsvpPreClick');
-                const postClick = document.getElementById('rsvpPostClick');
-                if (preClick && postClick) {
-                    preClick.classList.add('hidden');
-                    postClick.classList.add('active');
-                }
-            };
         });
     </script>
 
